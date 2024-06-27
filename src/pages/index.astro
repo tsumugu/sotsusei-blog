@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>場作りブログ</h1>
+			<p>
+				(自己紹介などを載せる)
+			</p>
+			<p>
+				卒制で場作りをしていく様子を記録するためのサイト
+			</p>
+			<p>
+				(スライド資料をここに載せる予定)
+			</p>
+			<p>
+				<a href="/blog">記事はこちら</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
