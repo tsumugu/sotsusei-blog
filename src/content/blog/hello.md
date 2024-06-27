@@ -2,6 +2,7 @@
 title: "TODO"
 description: "ブログでやる必要があること"
 pubDate: "2024/6/27"
+updatedDate: "2024/6/27"
 heroImage: "/blog-placeholder-1.jpg"
 isWriting: false
 ---
@@ -18,3 +19,7 @@ isWriting: false
 ## ブログ
 
 - サムネイルを自動生成にする
+
+- シェアボタンをつける
+
+- コメントボタンをつける
