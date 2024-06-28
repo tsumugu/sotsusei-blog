@@ -3,6 +3,7 @@ title: "TODO"
 description: "ブログでやる必要があること"
 pubDate: "2024/6/27"
 isWriting: false
+slug: "hello"
 ---
 
 ## サイト全体
