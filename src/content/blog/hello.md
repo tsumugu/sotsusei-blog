@@ -2,8 +2,8 @@
 title: "TODO"
 description: "ブログでやる必要があること"
 pubDate: "2024/6/27"
-heroImage: "/blog-placeholder-1.jpg"
 isWriting: false
+thumb: "hello"
 ---
 
 ## サイト全体
