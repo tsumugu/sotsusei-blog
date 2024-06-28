@@ -7,17 +7,17 @@ export async function getStaticPaths() {
 
   return posts.map((post) => ({
     params: {
-      slug: post.data.slug,
+      thumb: post.data.thumb,
     },
   }));
 }
 
 export async function GET({ params }: APIContext) {
-  const { slug } = params;
-  if (!slug) return { status: 404 };
+  const { thumb } = params;
+  if (!thumb) return { status: 404 };
 
   const post = (await getCollection("blog")).find(
-    (post) => post.data.slug === slug
+    (post) => post.data.thumb === thumb
   );
   if (!post) return { status: 404 };
 

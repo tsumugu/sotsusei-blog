@@ -8,9 +8,9 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, isWriting, slug } = Astro.props;
+const { title, description, pubDate, updatedDate, isWriting, thumb } = Astro.props;
 
-const heroImage = new URL(`/og/${slug}.png`, Astro.url.origin).toString();
+const heroImage = new URL(`/og/${thumb}.png`, Astro.url.origin).toString();
 ---
 
 <html lang="en">
