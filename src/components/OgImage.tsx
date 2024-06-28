@@ -1,6 +1,6 @@
 import { Resvg } from "@resvg/resvg-js";
 import satori from "satori";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_ORIGIN } from "../consts";
 
 const fontFamily = "Zen Kaku Gothic New";
 
@@ -17,9 +17,8 @@ export async function getOgImage(text: string) {
         justifyContent: "space-between",
         height: "100%",
         width: "100%",
-        backgroundColor: "#fff",
-        padding: "24px",
-        fontFamily: `"${fontFamily}", sans-serif`,
+        backgroundColor: "#097586",
+        padding: "36px",
       }}
     >
       <div
@@ -31,7 +30,7 @@ export async function getOgImage(text: string) {
           rowGap: "24px",
           height: "100%",
           width: "100%",
-          border: "2px solid #1e1e1e",
+          backgroundColor: "#fff",
           borderRadius: "8px",
           color: "#333",
           padding: "24px 24px",
@@ -43,7 +42,7 @@ export async function getOgImage(text: string) {
             alignItems: "center",
             justifyContent: "flex-start",
             width: "100%",
-            fontSize: "16px",
+            fontSize: "24px",
           }}
         >
           <span>{SITE_TITLE}</span>
@@ -58,6 +57,17 @@ export async function getOgImage(text: string) {
           }}
         >
           {text}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            width: "100%",
+            fontSize: "24px",
+          }}
+        >
+          <span>{SITE_ORIGIN}</span>
         </div>
       </div>
     </div>,

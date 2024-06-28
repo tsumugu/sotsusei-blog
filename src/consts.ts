@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = "場作りブログ";
 export const SITE_DESCRIPTION = "ゆるゆると場を作る様子を記録するWebサイトです";
+export const SITE_ORIGIN = "blog.tsum.ug";
