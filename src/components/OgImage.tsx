@@ -2,15 +2,10 @@ import { Resvg } from "@resvg/resvg-js";
 import satori from "satori";
 import { SITE_TITLE } from "../consts";
 
-const siteDomainName = "blog.lacolaco.net";
 const fontFamily = "Zen Kaku Gothic New";
 
 export async function getOgImage(text: string) {
-  const fontNormal = await fetchFont(
-    SITE_TITLE + siteDomainName,
-    fontFamily,
-    400
-  );
+  const fontNormal = await fetchFont(SITE_TITLE, fontFamily, 400);
   const fontBold = await fetchFont(SITE_TITLE + text, fontFamily, 700);
 
   const svg = await satori(
@@ -63,17 +58,6 @@ export async function getOgImage(text: string) {
           }}
         >
           {text}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            width: "100%",
-            fontSize: "24px",
-          }}
-        >
-          <span>{siteDomainName}</span>
         </div>
       </div>
     </div>,
