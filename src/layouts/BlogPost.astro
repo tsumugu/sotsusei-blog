@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
@@ -7,12 +8,27 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, isWriting } = Astro.props;
+const { title, description, pubDate, updatedDate, isWriting, slug } = Astro.props;
+
+const heroImage = new URL(`/og/${slug}.png`, Astro.url.origin).toString();
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={isWriting ? "この記事は非公開です" : title} description={description} />
+		<SEO
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          title: title,
+          type: "article",
+          image: heroImage,
+        },
+        image: {
+          alt: title,
+        },
+      }}
+    />
 		<style>
 			main {
 				width: calc(100% - 2em);
