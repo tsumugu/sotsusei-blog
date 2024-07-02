@@ -8,4 +8,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://blog.tsum.ug",
   integrations: [mdx(), sitemap(), react()],
+  vite: { optimizeDeps: { exclude: ["@resvg/resvg-js"] } },
 });
