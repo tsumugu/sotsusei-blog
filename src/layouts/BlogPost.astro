@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Share from '../components/Share.tsx';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -11,6 +12,12 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, isWriting, thumb } = Astro.props;
 
 const heroImage = new URL(`/og/${thumb}.png`, Astro.url.origin).toString();
+
+const shareData = {
+  title: title,
+  text: description,
+  url: Astro.url.toString()
+};
 ---
 
 <html lang="en">
@@ -90,7 +97,7 @@ const heroImage = new URL(`/og/${thumb}.png`, Astro.url.origin).toString();
 										{
 											updatedDate && (
 												<div class="last-updated-on">
-													Last updated on <FormattedDate date={updatedDate} />
+													最終更新日 : <FormattedDate date={updatedDate} />
 												</div>
 											)
 										}
@@ -99,6 +106,17 @@ const heroImage = new URL(`/og/${thumb}.png`, Astro.url.origin).toString();
 									<hr />
 								</div>
 								<slot />
+								<div>
+									<hr />
+									<Share info={shareData} client:load/>
+								</div>
+								<div>
+									<hr />
+									<p>
+										コメント
+										<br>(準備中)
+									</p>
+								</div>
 							</div>
 						</article>
 					</main>
