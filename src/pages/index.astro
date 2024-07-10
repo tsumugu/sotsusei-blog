@@ -3,6 +3,10 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { getSession } from 'auth-astro/server';
+const session = await getSession(Astro.request);
+console.log(session);
 ---
 
 <!doctype html>
@@ -13,6 +17,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
+			<div>
+				<button id="login">ログイン</button>
+				<button id="logout">ログアウト</button>
+				{
+					session ? (
+						<p>{session.user?.name}さん、ようこそ</p>
+					) : (
+						<p>未ログイン</p>
+					)
+				}
+				<script>
+					const { signIn, signOut } = await import("auth-astro/client")
+					document.querySelector("#login")!.addEventListener("click", function() {
+						signIn("google")
+					});
+					document.querySelector("#logout")!.addEventListener("click", function() {
+						signOut()
+					});
+				</script>
+			</div>
 			<h1>{SITE_TITLE}</h1>
 			<p>
 				こんにちは！多摩美情デコース4年の山口紡です。
