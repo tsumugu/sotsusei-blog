@@ -6,6 +6,10 @@ isWriting: true
 thumb: "markdown-style-guide"
 ---
 
+markdown-image をセットアップ済み。
+画像を command+c → option+shift+v で画像を S3 に配信可能
+![picture 0](https://d3djg0dm3dsv8.cloudfront.net/9bab7c23be88a609fac4bf656f774a6dcd1ff81dc449d0cc8cd3bdc83fc1c6ef.png)
+
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 
 ## Headings
