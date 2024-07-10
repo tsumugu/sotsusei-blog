@@ -1,0 +1,36 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { getSession } from 'auth-astro/server';
+const session = await getSession(Astro.request);
+console.log(session);
+---
+<!doctype html>
+<html lang="en">
+	<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script>
+      const { signIn, signOut } = await import("auth-astro/client")
+      document.querySelector("#login")!.addEventListener("click", function() {
+        signIn("google")
+      });
+      document.querySelector("#logout")!.addEventListener("click", function() {
+        signOut()
+      });
+    </script>
+	</head>
+	<body>
+    <div>
+      <button id="login">ログイン</button>
+      <button id="logout">ログアウト</button>
+      {
+        session ? (
+          <p>{session.user?.name}さん、ようこそ</p>
+        ) : (
+          <p>未ログイン</p>
+        )
+      }
+    </div>
+  </body>
+</html>
