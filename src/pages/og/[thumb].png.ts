@@ -29,3 +29,5 @@ export async function GET({ params }: APIContext) {
     },
   });
 }
+
+export const prerender = true;
