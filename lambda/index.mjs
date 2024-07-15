@@ -13,7 +13,13 @@ export const handler = async (event, context) => {
       "Access-Control-Allow-Methods": "GET",
       "Access-Control-Allow-Origin": "*",
     },
-    body: JSON.stringify(res.data),
+    body: JSON.stringify({
+      ...res.data,
+      ...{
+        isTamabiUser:
+          res.data.email.match(/^.*@(?:.*\.)?tamabi\.ac\.jp$/gm) !== null,
+      },
+    }),
   };
   return response;
 };

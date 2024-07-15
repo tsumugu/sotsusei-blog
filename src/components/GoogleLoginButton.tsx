@@ -2,7 +2,7 @@ import { CookiesProvider, useCookies } from "react-cookie";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 function GoogleLoginButton() {
-  const [_, setCookie] = useCookies(["isTamabiUser"]);
+  const [_, setCookie] = useCookies(["userInfo"]);
   return (
     <div>
       <CookiesProvider defaultSetOptions={{ path: "/" }}>
@@ -15,14 +15,8 @@ function GoogleLoginButton() {
                     `https://wribrm1pf4.execute-api.ap-northeast-1.amazonaws.com/default/verifyGoogleCredential?access_token=${credentialResponse.credential}`
                   )
                 ).json();
-                const isTamabiUser = userInfo.email.match(
-                  /^.*@(?:.*\.)?tamabi\.ac\.jp$/gm
-                );
-                if (isTamabiUser) {
-                  setCookie(
-                    "isTamabiUser",
-                    userInfo.email.match(/^.*@(?:.*\.)?tamabi\.ac\.jp$/gm)
-                  );
+                if (userInfo.isTamabiUser) {
+                  setCookie("userInfo", userInfo);
                 } else {
                   alert("多摩美のメールアドレスでログインしてください");
                   console.log(userInfo.email);
