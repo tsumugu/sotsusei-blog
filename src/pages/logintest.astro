@@ -1,0 +1,15 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import LoginUserForm from '../components/login.tsx';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts.ts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<LoginUserForm client:load />
+	</body>
+</html>
