@@ -1,5 +1,6 @@
 //import { CookiesProvider, useCookies } from "react-cookie";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import { SITE_ORIGIN } from "../consts";
 
 function GoogleLoginButton() {
   //const [_, setCookie] = useCookies(["google-cledentials"]);
@@ -10,7 +11,7 @@ function GoogleLoginButton() {
         <GoogleLogin
           onSuccess={async (credentialResponse) => {
             const userInfo = await fetch(
-              `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${credentialResponse.credential}`
+              `https://${SITE_ORIGIN}/userinfo/userinfo?access_token=${credentialResponse.credential}`
             );
             console.log(credentialResponse, userInfo);
             //setCookie("google-cledentials", credentialResponse);
