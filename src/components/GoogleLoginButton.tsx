@@ -11,7 +11,7 @@ function GoogleLoginButton() {
         <GoogleLogin
           onSuccess={async (credentialResponse) => {
             const userInfo = await fetch(
-              `https://${SITE_ORIGIN}/userinfo/userinfo?access_token=${credentialResponse.credential}`
+              `https://${SITE_ORIGIN}/userinfo/userinfo.json?access_token=${credentialResponse.credential}`
             );
             console.log(credentialResponse, userInfo);
             //setCookie("google-cledentials", credentialResponse);
