@@ -1,9 +1,9 @@
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
-function LoginUserForm() {
+function GoogleLoginButton() {
   return (
     <div>
-      <GoogleOAuthProvider clientId={import.meta.env.GOOGLE_CLIENT_ID}>
+      <GoogleOAuthProvider clientId={import.meta.env.PUBLIC_GOOGLE_CLIENT_ID}>
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse);
@@ -17,4 +17,4 @@ function LoginUserForm() {
   );
 }
 
-export default LoginUserForm;
+export default GoogleLoginButton;
