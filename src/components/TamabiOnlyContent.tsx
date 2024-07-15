@@ -15,9 +15,9 @@ const TamabiOnlyContent: React.FC<TamabiOnlyContentProps> = ({
     <CookiesProvider defaultSetOptions={{ path: "/" }}>
       <div className="tamabiOnlyContent">
         {userInfo.isTamabiUser ? (
-          <>{contentPlaceholder}</>
-        ) : (
           <>{limitedContent}</>
+        ) : (
+          <>{contentPlaceholder}</>
         )}
       </div>
     </CookiesProvider>
