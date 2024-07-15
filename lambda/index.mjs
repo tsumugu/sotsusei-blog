@@ -8,7 +8,9 @@ export const handler = async (event, context) => {
   const response = {
     statusCode: 200,
     headers: {
-      "Content-Type": "text/html",
+      "Content-Type": "text/json",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Methods": "GET",
       "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify(res.data),
