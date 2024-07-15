@@ -13,10 +13,9 @@ function GoogleLoginButton() {
             const userInfo = await new Promise((resolve) => {
               const xhr = new XMLHttpRequest();
 
-              xhr.open("GET", `https://www.googleapis.com/oauth2/v3/userinfo`);
-              xhr.setRequestHeader(
-                "Authorization",
-                `Bearer ${credentialResponse.credential}`
+              xhr.open(
+                "GET",
+                `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${credentialResponse.credential}`
               );
               xhr.onload = function () {
                 if (this.status >= 200 && this.status < 300)
