@@ -3,6 +3,7 @@ import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 function GoogleLoginButton() {
   const [_, setCookie] = useCookies(["userInfo"]);
+  const [_2, setCookie2] = useCookies(["isTamabiUser"]);
   return (
     <div>
       <CookiesProvider defaultSetOptions={{ path: "/" }}>
@@ -17,6 +18,7 @@ function GoogleLoginButton() {
                 ).json();
                 if (userInfo.isTamabiUser) {
                   setCookie("userInfo", userInfo);
+                  setCookie2("isTamabiUser", userInfo.isTamabiUser);
                 } else {
                   alert("多摩美のメールアドレスでログインしてください");
                   console.log(userInfo.email);
