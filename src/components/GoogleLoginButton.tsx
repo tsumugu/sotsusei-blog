@@ -9,12 +9,15 @@ function GoogleLoginButton() {
       {/* <CookiesProvider defaultSetOptions={{ path: "/" }}> */}
       <GoogleOAuthProvider clientId={import.meta.env.PUBLIC_GOOGLE_CLIENT_ID}>
         <GoogleLogin
-          onSuccess={async (credentialResponse) => {
-            const userInfo = await fetch(
-              `https://wribrm1pf4.execute-api.ap-northeast-1.amazonaws.com/default/verifyGoogleCredential?access_token=${credentialResponse.credential}`
-            );
-            console.log(credentialResponse, userInfo);
-            //setCookie("google-cledentials", credentialResponse);
+          onSuccess={(credentialResponse) => {
+            const fetchUserInfo = async () => {
+              const userInfo = await fetch(
+                `https://wribrm1pf4.execute-api.ap-northeast-1.amazonaws.com/default/verifyGoogleCredential?access_token=${credentialResponse.credential}`
+              );
+              console.log(userInfo.json());
+              //setCookie("google-cledentials", credentialResponse);
+            };
+            fetchUserInfo();
           }}
           onError={() => {
             console.log("Login Failed");
