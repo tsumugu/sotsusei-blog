@@ -10,20 +10,9 @@ function GoogleLoginButton() {
       <GoogleOAuthProvider clientId={import.meta.env.PUBLIC_GOOGLE_CLIENT_ID}>
         <GoogleLogin
           onSuccess={async (credentialResponse) => {
-            const userInfo = await new Promise((resolve) => {
-              const xhr = new XMLHttpRequest();
-
-              xhr.open(
-                "GET",
-                `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${credentialResponse.credential}`
-              );
-              xhr.onload = function () {
-                if (this.status >= 200 && this.status < 300)
-                  resolve(JSON.parse(this.responseText));
-                else resolve({ err: "404" });
-              };
-              xhr.send();
-            });
+            const userInfo = await fetch(
+              `https://wribrm1pf4.execute-api.ap-northeast-1.amazonaws.com/default/verifyGoogleCredential?access_token=${credentialResponse.credential}`
+            );
             console.log(credentialResponse, userInfo);
             //setCookie("google-cledentials", credentialResponse);
           }}
