@@ -19,43 +19,45 @@ export const people = [
     department: "情報デザインコース",
     photo: "",
     grade: "1年生",
+    color: "#00ffff",
   },
   {
     name: "2",
     department: "情報デザインコース",
     photo: "",
     grade: "1年生",
+    color: "#ff00ff",
   },
   {
     name: "3",
     department: "プロダクトデザイン学科",
     photo: "",
     grade: "院2年生",
+    color: "#ffff00",
   },
   {
     name: "4",
     department: "プロダクトデザイン学科",
     photo: "",
     grade: "院2年生",
+    color: "#00ff00",
   },
   {
     name: "5",
     department: "絵画学科油画専攻",
     photo: "",
     grade: "4年生",
+    color: "#0f00ff",
   },
 ];
 
 export const events = [
   {
-    type: "normarl",
-    event:
-      "広場の椅子で話していた2人組に「コーヒー飲みませんか？」と声を掛ける",
-    feeling: "きっかけとしてコーヒーが最適",
-  },
-  {
     type: "join",
     people: ["1", "2"],
+    trigger:
+      "広場の椅子で話していた2人組に「コーヒー飲みませんか？」と声を掛ける",
+    feeling: "きっかけとしてコーヒーが最適",
   },
   {
     type: "normarl",
@@ -74,40 +76,41 @@ export const events = [
       "予想通り、ゲームをしたことで一気に話しやすくなった。笑顔が生まれた。",
   },
   {
-    type: "normarl",
-    event: "解散した",
-    feeling: "ゲームが一段落したところで解散の空気が生まれた",
-  },
-  {
     type: "left",
     people: ["1", "2"],
-  },
-  {
-    type: "normarl",
-    event: "広場で立っていた人に「コーヒー飲みませんか？」と声を掛ける",
+    trigger: "",
     feeling: "",
   },
   {
-    type: "normarl",
-    event:
+    type: "join",
+    people: ["3"],
+    trigger: "広場で立っていた人に「コーヒー飲みませんか？」と声を掛ける",
+    feeling: "",
+  },
+  {
+    type: "join",
+    people: ["3", "4"],
+    trigger:
       "友達とご飯を食べるために広場で待ち合わせていたということで、もう1人が合流",
     feeling: "",
   },
   {
-    type: "join",
-    people: ["3", "4"],
-  },
-  {
     type: "left",
     people: ["3", "4"],
+    trigger: "",
+    feeling: "",
   },
   {
     type: "join",
     people: ["5"],
+    trigger: "",
+    feeling: "",
   },
   {
     type: "left",
     people: ["5"],
+    trigger: "",
+    feeling: "",
   },
 ];
 
@@ -144,11 +147,7 @@ export const events = [
 
 ## どのような場が生まれたのか
 
-<EventsInfo
-  overview="今回は留学生が多かった"
-  people={people}
-  eventsinfo={events}
-/>
+<EventsInfo overview="今回は留学生が多かった" people={people} events={events} />
 
 ## そこから私は何を感じたのか
 
