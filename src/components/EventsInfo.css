@@ -20,24 +20,34 @@
   position: relative;
 }
 
+.event-container.normal-event,
+.event-container.join-event,
+.event-container.leave-event {
+  margin-top: 18px;
+}
+
 .event-container.normal-event {
-  padding: 10px;
+  padding: 0px;
   aspect-ratio: auto;
   align-items: flex-start;
 }
 
 .event-container.join-event {
-  border-top: 2px solid #000;
-  /**/
-  border-bottom: 1px solid #ccc;
-  /**/
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-width: 80%;
+  text-align: left;
 }
 
 .event-container.leave-event {
-  /**/
-  border-top: 1px solid #ccc;
-  /**/
-  border-bottom: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-width: 80%;
+  text-align: left;
 }
 
 .trigger-feeling-container,
@@ -62,19 +72,77 @@
 
 .person-container {
   height: 100%;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 0;
+}
+
+.person-container.one-people {
+  grid-template-areas:
+    ". person-0 ."
+    ". table-circle ."
+    ". person-tsumugu .";
+}
+
+.person-container.two-people {
+  grid-template-areas:
+    "person-0 . person-1"
+    ". table-circle ."
+    ". person-tsumugu .";
+}
+
+.person-container.three-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    ". table-circle ."
+    ". person-tsumugu .";
+}
+
+.person-container.four-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    "person-3 table-circle ."
+    ". person-tsumugu .";
+}
+
+.person-container.five-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    "person-3 table-circle person-4"
+    ". person-tsumugu .";
+}
+.person-container.six-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    "person-3 table-circle person-4"
+    "person-5 person-tsumugu .";
+}
+.person-container.seven-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    "person-3 table-circle person-4"
+    "person-5 person-tsumugu person-6";
 }
 
 .event-bubble {
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
   max-width: 80%;
   text-align: left;
+  position: relative;
+  padding-left: 16px;
+}
+.event-bubble::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: black; /* 丸の色を指定 */
+  border-radius: 50%;
 }
 
 .event-text {
@@ -89,14 +157,16 @@
   color: #666;
 }
 
-.person {
+.person,
+.table {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
 }
 
-.person-circle {
+.person-circle,
+.table-circle {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -105,12 +175,29 @@
   align-items: center;
   position: relative;
   color: white;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
 }
 
-.person-label {
+.table-circle {
+  background: url("https://d3djg0dm3dsv8.cloudfront.net/c0d6b16423f661a91e8e950cde35ff26e78a00adb0ff7c0eaa489fe991714a24.svg");
+  /* filter generated at https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(0%) sepia(3%) saturate(32%) hue-rotate(67deg) brightness(84%)
+    contrast(98%);
+  border-radius: 0;
+}
+
+.person-label,
+.person-label-tooltip {
   text-align: center;
   font-size: 12px;
   color: #333;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.person-name {
+  font-size: 16px;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -120,4 +207,32 @@
   font-size: 12px;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.join {
+  animation: slidein 3s infinite;
+}
+
+.left {
+  animation: slideout 3s infinite;
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideout {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 }
