@@ -12,45 +12,36 @@ import TsumuguInfo from "../../components/TsumuguInfo.jsx";
 import VisitorsInfo from "../../components/VisitorsInfo.jsx";
 import DiffInfo from "../../components/DiffInfo.jsx";
 import EventsInfo from "../../components/EventsInfo.jsx";
-import { TSUMUGU_PROFILE_JSON } from "../../consts.js";
+import { DEPARTMENT_AND_ICONS, TSUMUGU_PROFILE_JSON } from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
 
-export const people = [
+export const peopleWithColor = convertPeopleWithColor([
   {
     name: "Aさん",
-    department: "情報デザインコース",
-    photo: "",
+    department: DEPARTMENT_AND_ICONS.interaction,
     grade: "1年生",
-    color: "#00ffff",
   },
   {
     name: "Bさん",
-    department: "情報デザインコース",
-    photo: "",
+    department: DEPARTMENT_AND_ICONS.interaction,
     grade: "1年生",
-    color: "#ff00ff",
   },
   {
     name: "Cさん",
-    department: "プロダクトデザイン学科",
-    photo: "",
+    department: DEPARTMENT_AND_ICONS.product,
     grade: "院2年生",
-    color: "#ffff00",
   },
   {
     name: "Dさん",
-    department: "プロダクトデザイン学科",
-    photo: "",
+    department: DEPARTMENT_AND_ICONS.product,
     grade: "院2年生",
-    color: "#00ff00",
   },
   {
     name: "Eさん",
-    department: "絵画学科油画専攻",
-    photo: "",
+    department: DEPARTMENT_AND_ICONS.oil,
     grade: "4年生",
-    color: "#0f00ff",
   },
-];
+]);
 
 export const events = [
   {
@@ -136,7 +127,7 @@ export const events = [
 
 <TsumuguInfo condition="とても元気" comment="前期審査会明けでやる気" photo="" />
 
-<VisitorsInfo visitors={people} />
+<VisitorsInfo visitors={peopleWithColor} />
 
 ## 前回との変更点
 
@@ -155,7 +146,11 @@ export const events = [
 
 ## どのような場が生まれたのか
 
-<EventsInfo overview="今回は留学生が多かった" people={people} events={events} />
+<EventsInfo
+  overview="今回は留学生が多かった"
+  people={peopleWithColor}
+  events={events}
+/>
 
 ## そこから私は何を感じたのか
 

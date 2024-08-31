@@ -87,17 +87,14 @@ const EventsInfo = ({ events, people }) => {
                       <p className="person-name">{person.name}</p>
                     </div>
                     {/* <div className="person-label-tooltip">
-                      <p className="person-department">{person.department}</p>
+                      <p className="person-department">{person.department.name}</p>
                       <p className="person-grade">{person.grade}</p>
                     </div> */}
-                    <div
+                    <img
                       className={`person-circle`}
-                      style={{
-                        background: person.photo
-                          ? 'url("' + person.photo + '")'
-                          : 'url("' + STUDENT_DEFAULT_PROFILE_IMG_PATH + '")',
-                      }}
-                    ></div>
+                      src={person.photo ? person.photo : person.department.icon}
+                      style={{ background: person.color }}
+                    />
                   </div>
                 );
               })}

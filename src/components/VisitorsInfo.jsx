@@ -17,10 +17,11 @@ const VisitorsInfo = ({ visitors }) => {
           <ul>
             <li>
               <img
-                src={item.photo ? item.photo : STUDENT_DEFAULT_PROFILE_IMG_PATH}
+                src={item.photo ? item.photo : item.department.icon}
                 width="128px"
+                style={{ background: item.color }}
               />
-              {item.name} {item.department} {item.grade}
+              {item.name} {item.department.name} {item.grade}
             </li>
           </ul>
         );

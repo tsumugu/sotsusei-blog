@@ -13,5 +13,86 @@ export const TSUMUGU_PROFILE_JSON = {
   grade: "4年生",
   color: "#ffffff",
 };
-export const STUDENT_DEFAULT_PROFILE_IMG_PATH =
-  "https://d3djg0dm3dsv8.cloudfront.net/b7f72533ae81a83e0b8b374bcf585bed5f9301ce448ba578ae3a925cfeb46a16.png";
+
+// export const STUDENT_DEFAULT_PROFILE_IMG_PATH =
+//   "https://d3djg0dm3dsv8.cloudfront.net/34c4bc3a812659978c1b66b60478e898f8d857f9a006f1e6f112aa799c9b123b.svg";
+
+export const COLORS = [
+  "#823636",
+  "#823670",
+  "#463682",
+  "#365A82",
+  "#36826C",
+  "#598236",
+  "#828236",
+  "#826636",
+];
+
+const DESIGN_DEFAULT_ICON_PATH =
+  "https://d3djg0dm3dsv8.cloudfront.net/0769f9df95f0db688c219432f320b9dbde03dbe8c28a2c00970413b9afceb3a9.svg";
+const PAINT_DEFAULT_ICON_PATH =
+  "https://d3djg0dm3dsv8.cloudfront.net/152d01e10af99b035ff7de34311e592d4c60563abed7d478350d86b5eb00b3b9.svg";
+const WORKS_DEFAULT_ICON_PATH =
+  "https://d3djg0dm3dsv8.cloudfront.net/e1b97f72bc3312223afa51908690eaca892c32766fa53f89c16dab7bf5b336f3.svg";
+export const DEPARTMENT_AND_ICONS = {
+  japanese: {
+    name: "絵画学科 日本画専攻",
+    icon: PAINT_DEFAULT_ICON_PATH,
+  },
+  oil: {
+    name: "絵画学科 油画専攻",
+    icon: PAINT_DEFAULT_ICON_PATH,
+  },
+  "graphic-art": {
+    name: "絵画学科 版画専攻",
+    icon: PAINT_DEFAULT_ICON_PATH,
+  },
+  sculpture: {
+    name: "彫刻学科",
+    icon: WORKS_DEFAULT_ICON_PATH,
+  },
+  works: {
+    name: "工芸学科",
+    icon: WORKS_DEFAULT_ICON_PATH,
+  },
+  "graphic-design": {
+    name: "グラフィックデザイン学科",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  product: {
+    name: "生産デザイン学科 プロダクトデザイン専攻",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  textile: {
+    name: "生産デザイン学科 テキスタイルデザイン専攻",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  env: {
+    name: "建築・環境デザイン学科",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  media: {
+    name: "情報デザイン学科 メディア芸術コース",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  interaction: {
+    name: "情報デザイン学科 情報デザインコース",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  "art-studies": {
+    name: "芸術学科",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  integrated: {
+    name: "統合デザイン学科",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  drama: {
+    name: "演劇舞踊デザイン学科 演劇舞踊コース",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+  scenography: {
+    name: "演劇舞踊デザイン学科 劇場美術デザインコース",
+    icon: DESIGN_DEFAULT_ICON_PATH,
+  },
+};
