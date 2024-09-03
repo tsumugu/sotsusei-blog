@@ -14,9 +14,6 @@ export const TSUMUGU_PROFILE_JSON = {
   color: "#ffffff",
 };
 
-// export const STUDENT_DEFAULT_PROFILE_IMG_PATH =
-//   "https://d3djg0dm3dsv8.cloudfront.net/34c4bc3a812659978c1b66b60478e898f8d857f9a006f1e6f112aa799c9b123b.svg";
-
 export const COLORS = [
   "#823636",
   "#823670",

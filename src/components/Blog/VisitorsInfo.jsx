@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  STUDENT_DEFAULT_PROFILE_IMG_PATH,
-  TSUMUGU_PROFILE_JSON,
-} from "../consts";
+import { TSUMUGU_PROFILE_JSON } from "../../consts";
 
 const VisitorsInfo = ({ visitors }) => {
   const visitorsWithoutTsumugu = visitors.filter(

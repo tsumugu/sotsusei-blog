@@ -1,5 +1,5 @@
 import TamabiOnlyContent from "./TamabiOnlyContent";
-import GoogleLoginButton from "./GoogleLoginButton";
+import GoogleLoginButton from "../GoogleLoginButton";
 
 const TamabiOnlyImage = ({ src, width, height, alt }) => {
   return (

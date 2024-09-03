@@ -1,0 +1,22 @@
+.clock {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.time-text {
+  position: absolute;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.circle {
+  transform: rotate(-90deg);
+}
+
+.progress {
+  stroke: var(--accent);
+}

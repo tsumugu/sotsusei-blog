@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./EventsInfo.css";
-import {
-  STUDENT_DEFAULT_PROFILE_IMG_PATH,
-  TSUMUGU_PROFILE_JSON,
-} from "../consts";
+import { TSUMUGU_PROFILE_JSON } from "../../../consts";
 
 const EventsInfo = ({ events, people }) => {
   const addTsumuguToPeople = (people) => {
