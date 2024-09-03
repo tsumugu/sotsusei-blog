@@ -24,16 +24,16 @@ const PostBasicInfo = ({ date, weather, place, startedAt, endedAt }) => {
           />
         </div>
       )}
-      {place && (
-        <div className="place">
-          <h5>場所</h5>
-          <TamabiMap place={place} />
-        </div>
-      )}
       {startedAt && endedAt && (
         <div className="time">
           <h5>時間</h5>
           <Clock startedAt={startedAt} endedAt={endedAt} />
+        </div>
+      )}
+      {place && (
+        <div className="place">
+          <h5>場所</h5>
+          <TamabiMap place={place} />
         </div>
       )}
       {weather && (

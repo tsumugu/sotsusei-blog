@@ -6,13 +6,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
-  padding-bottom: 1em;
+  gap: 2em;
+  padding-bottom: 2em;
 }
 .calendar {
   display: flex;
   flex-direction: column;
   height: 100%;
+  pointer-events: none;
 }
 .calendar .react-calendar {
   flex-grow: 1;
