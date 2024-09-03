@@ -1,16 +1,28 @@
 .clock {
-  width: 200px;
-  height: 200px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
+.number {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 18px;
+}
+
 .time-text {
   position: absolute;
+  text-align: center;
+}
+.time-text p {
   margin: 0 !important;
   padding: 0;
+}
+.time-dur {
+  font-weight: bold;
 }
 
 .circle {

@@ -2,3 +2,22 @@
   background: var(--accent);
   color: white;
 }
+.post-basic-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  padding-bottom: 1em;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.calendar .react-calendar {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}

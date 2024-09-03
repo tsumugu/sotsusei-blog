@@ -1,0 +1,36 @@
+.map-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.pin {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.pin p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.map {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+.credit {
+  font-size: 12px;
+  background-color: rgb(var(--gray-light));
+  color: rgb(var(--black));
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.credit a {
+  margin-left: 6px;
+  color: rgb(var(--black));
+}

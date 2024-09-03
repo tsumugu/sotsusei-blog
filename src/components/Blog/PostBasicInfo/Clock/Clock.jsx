@@ -1,7 +1,9 @@
 import React from "react";
 import "./Clock.css";
+import { convertMinutesToHoursAndMinutes } from "../../../../utils/convertMinutesToHoursAndMinutes";
 
 const Clock = ({ startedAt, endedAt }) => {
+  const numbers = Array.from({ length: 12 }, (_, i) => i + 1);
   const parseTime = (timeStr) => {
     const [hours, minutes] = timeStr.split(":").map(Number);
     return (hours % 12) * 60 + minutes;
@@ -23,9 +25,32 @@ const Clock = ({ startedAt, endedAt }) => {
 
   return (
     <div className="clock">
-      <p className="time-text">
-        {startedAt}-{endedAt}
-      </p>
+      <div className="time-text">
+        <p>
+          {startedAt}-{endedAt}
+        </p>
+        <p className="time-dur">
+          {convertMinutesToHoursAndMinutes(endMinutes - startMinutes)}
+        </p>
+      </div>
+      {numbers.map((number, index) => {
+        const angle = (index + 1) * 30;
+        const x = 50 + 36 * Math.cos((angle - 90) * (Math.PI / 180));
+        const y = 50 + 36 * Math.sin((angle - 90) * (Math.PI / 180));
+
+        return (
+          <div
+            key={number}
+            className="number"
+            style={{
+              top: `${y}%`,
+              left: `${x}%`,
+            }}
+          >
+            {number}
+          </div>
+        );
+      })}
       <svg viewBox="0 0 100 100" className="circle">
         <circle
           cx="50"
