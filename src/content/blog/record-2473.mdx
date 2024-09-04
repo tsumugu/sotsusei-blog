@@ -9,10 +9,14 @@ category: ["活動記録"]
 
 import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
 import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
-import VisitorsInfo from "../../components/Blog/VisitorsInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
 import DiffInfo from "../../components/Blog/DiffInfo.jsx";
 import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
-import { DEPARTMENT_AND_ICONS, TSUMUGU_PROFILE_JSON } from "../../consts.js";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
 import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
 
 export const peopleWithColor = convertPeopleWithColor([
@@ -116,6 +120,7 @@ export const events = [
 <PostBasicInfo
   date="2024-07-03"
   weather="晴れ"
+  temp="31.6"
   place="東学広場"
   startedAt="13:10"
   endedAt="15:00"

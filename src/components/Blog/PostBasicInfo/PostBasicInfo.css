@@ -2,6 +2,7 @@
   background: var(--accent);
   color: white;
 }
+
 .post-basic-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -9,16 +10,70 @@
   gap: 2em;
   padding-bottom: 2em;
 }
+
+.cell {
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
 .calendar {
   display: flex;
   flex-direction: column;
   height: 100%;
   pointer-events: none;
 }
+
 .calendar .react-calendar {
   flex-grow: 1;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  border: none;
+  /* border: 1px solid rgb(var(--gray)); */
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.weather-inner {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* background-color: rgb(var(--gray-light)); */
+  /* border: 1px solid rgb(var(--gray)); */
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emoji-text-wrapper {
+  text-align: center;
+}
+
+.weather .emoji img {
+  font-size: 8rem;
+}
+
+.emoji-text-wrapper > p {
+  margin-top: 16px;
+  font-size: 1.2rem;
+}
+
+.weather .temp {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

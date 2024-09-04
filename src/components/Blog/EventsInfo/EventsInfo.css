@@ -35,7 +35,7 @@
 .event-container.join-event {
   background-color: #f1f1f1;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 10px;
   max-width: 80%;
   text-align: left;
@@ -44,7 +44,7 @@
 .event-container.leave-event {
   background-color: #f1f1f1;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 10px;
   max-width: 80%;
   text-align: left;

@@ -1,0 +1,15 @@
+.visitor-card {
+  margin-bottom: 1em;
+  padding: 1em;
+  /* box-shadow: var(--box-shadow); */
+  border: 1px solid rgb(var(--gray));
+}
+
+.name,
+.dept {
+  margin: 0 !important;
+}
+
+.dept {
+  padding-top: 1em;
+}

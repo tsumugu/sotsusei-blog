@@ -59,6 +59,7 @@ const Clock = ({ startedAt, endedAt }) => {
           stroke="lightgrey"
           strokeWidth="4"
           fill="none"
+          className="bg"
         />
         <circle
           cx="50"

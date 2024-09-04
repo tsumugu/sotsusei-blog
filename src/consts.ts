@@ -25,6 +25,17 @@ export const COLORS = [
   "#826636",
 ];
 
+export const WEATHERS = {
+  晴れ: "☀️",
+  曇り: "☁",
+  晴れのち曇り: "⛅",
+  雷雨: "⛈",
+  晴れのち雨: "🌦",
+  雨: "🌧",
+  雪: "🌨",
+  雷: "🌩",
+};
+
 const DESIGN_DEFAULT_ICON_PATH =
   "https://d3djg0dm3dsv8.cloudfront.net/0769f9df95f0db688c219432f320b9dbde03dbe8c28a2c00970413b9afceb3a9.svg";
 const PAINT_DEFAULT_ICON_PATH =
