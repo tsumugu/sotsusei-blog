@@ -1,0 +1,256 @@
+---
+title: "ノートを描いてもらった"
+description: "2024/7/9にフリーコーヒーを行った記録"
+pubDate: "2024/7/9"
+isWriting: false
+thumb: "record-2479"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "Aさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "1年生",
+  },
+  {
+    name: "Bさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "1年生",
+  },
+  {
+    name: "Cさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+  },
+  {
+    name: "Dさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+  },
+  {
+    name: "Eさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "3年生",
+  },
+  {
+    name: "Fさん",
+    department: DEPARTMENT_AND_ICONS.oil,
+    grade: "1年生",
+  },
+]);
+
+export const events = [
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Aさん", "Bさん"],
+    trigger: "広場を歩いていた2人組に「コーヒー飲みませんか？」と声を掛ける",
+  },
+  {
+    type: "normarl",
+    event: "パックからコーヒーを注いで渡した。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科と名前を聞いて、ノートに名前を書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ゲームをした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "イラストを描いてもらった",
+    feeling: "自画像は嫌だと言われたので、山口の似顔絵を描いてもらった",
+  },
+  {
+    type: "normarl",
+    event: "就活の話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Aさん", "Bさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Cさん", "Dさん"],
+    trigger: "広場を歩いていた2人に「コーヒー飲みませんか？」と声を掛ける",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "パックからコーヒーを注いで渡した。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科と名前を聞いて、ノートに名前とイラストを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "推しの話をした",
+    feeling: "イラストきっかけで話が広がった",
+  },
+  {
+    type: "normarl",
+    event: "なぜフリーコーヒーをしているのかの話をした",
+    feeling: "ゲームなしでも話が盛り上がった",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Cさん", "Dさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Eさん"],
+    trigger: "自分から来てくれた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "パックからコーヒーを注いで渡した。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科と名前を聞いて、ノートに名前とイラストを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "授業課題でフリーコーヒーと似た取り組みをしているという話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "共通の知り合いの話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Eさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Fさん"],
+    trigger: "広場で休んでいたところに声を掛けた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "なぜ広場にいたの？という話",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "パックからコーヒーを注いで渡した。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科と名前を聞いて、ノートに名前とイラストを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "授業課題についての話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "自主制作についての話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Eさん"],
+    trigger: "",
+    feeling: "",
+  },
+];
+
+<PostBasicInfo
+  date="2024-07-09"
+  weather="晴れのち曇り"
+  temp="31"
+  place="東学広場"
+  startedAt="13:10"
+  endedAt="16:30"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="とても元気"
+  comment="インスタのストーリーで宣伝してもらった写真"
+  photo="https://d3djg0dm3dsv8.cloudfront.net/596339c70953e187e6cb70abecb19a8e60a9b8e5a79089df7bc08cd3c5be69e6.png"
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[
+    {
+      action: "カメラを設置した",
+      reason: "動画で会話や周りの人の様子を記録しておくため",
+      photo:
+        "https://d3djg0dm3dsv8.cloudfront.net/d1562a0a1f60daa9d8636a63042d606d60c38a574af11d5ab112e019376b0671.png",
+    },
+    {
+      action: "ノートを置いた",
+      reason: "名前を覚えやすくするため、会話のきっかけにするため",
+      photo:
+        "https://d3djg0dm3dsv8.cloudfront.net/c5b78a34a852b396c5d17d104387a85b16856a2f9c0e4c49fe64cfadfc9a04cb.png",
+    },
+  ]}
+/>
+
+## どのような場が生まれたのか
+
+<EventsInfo overview="" people={peopleWithColor} events={events} />
+
+## そこから私は何を感じたのか
+
+- ノートは名前を覚えやすいし、イラストが会話のきっかけにもなる。
+- どんな場だったか後から振り返るためのきっかけにもなる。
+- ゲームは必ずしも必要ではなく、会話のみで十分盛り上がる場合もある。
+- 会話を文字起こしするのが手間なので、記録の方法は引き続き考える必要がある。
+- 看板は見られるが、参加せずに通り過ぎてしまう人が多い。
+
+## 次に何をしようと思ったのか
+
+- こちらから会話しなくても人が来るように、説明パネルを設置する
+- コーヒーも会話のきっかけにしたいので、自分で豆を挽くようにする

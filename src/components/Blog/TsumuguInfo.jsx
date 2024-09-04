@@ -1,4 +1,5 @@
 import React from "react";
+import TamabiOnlyImage from "./TamabiOnlyImage";
 
 const TsumuguInfo = ({ condition, comment, photo }) => {
   return (
@@ -7,7 +8,7 @@ const TsumuguInfo = ({ condition, comment, photo }) => {
       <ul>
         {photo && (
           <li>
-            <img src={photo} />
+            <TamabiOnlyImage src={photo} />
           </li>
         )}
         {condition && <li>{condition}</li>}

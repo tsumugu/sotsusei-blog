@@ -1,4 +1,5 @@
 import React from "react";
+import TamabiOnlyImage from "./TamabiOnlyImage";
 
 const DiffInfo = ({ diffs }) => {
   return (
@@ -9,6 +10,11 @@ const DiffInfo = ({ diffs }) => {
             <li>{item.action}</li>
             <ul>
               <li>{item.reason}</li>
+              {item.photo && (
+                <li>
+                  <TamabiOnlyImage src={item.photo} />
+                </li>
+              )}
             </ul>
           </>
         );
