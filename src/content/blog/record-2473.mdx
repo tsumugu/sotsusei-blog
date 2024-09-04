@@ -128,7 +128,12 @@ export const events = [
 
 ## 人について
 
-<TsumuguInfo condition="とても元気" comment="前期審査会明けでやる気" photo="" />
+<TsumuguInfo
+  condition="とても元気"
+  comment="前期審査会明けでやる気"
+  photo=""
+  client:load
+/>
 
 <VisitorsInfo visitors={peopleWithColor} />
 
@@ -145,6 +150,7 @@ export const events = [
       reason: "アイスブレイクのため",
     },
   ]}
+  client:load
 />
 
 ## どのような場が生まれたのか
