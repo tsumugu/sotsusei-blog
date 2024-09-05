@@ -1,0 +1,269 @@
+---
+title: "コーヒーを挽いた"
+description: "2024/7/17にフリーコーヒーを行った記録"
+pubDate: "2024/7/17"
+isWriting: false
+thumb: "record-24717"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "Aさん",
+    department: DEPARTMENT_AND_ICONS.sculpture,
+    grade: "1年生",
+  },
+  {
+    name: "Bさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Cさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Dさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Eさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Fさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Gさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Hさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生",
+  },
+  {
+    name: "Iさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "4年生",
+  },
+]);
+
+export const events = [
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Aさん"],
+    trigger: "前から興味があったと声をかけてくれた",
+  },
+  {
+    type: "normarl",
+    event: "ノートに名前を書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "なぜフリーコーヒーをしているのかの話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "お湯が沸いたのでコーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Aさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Bさん", "Cさん", "Dさん"],
+    trigger: "広場を歩いていた3人に「コーヒー飲みませんか？」と声を掛ける",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ノートに名前を書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "工芸学科について聞いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "お湯が沸いたのでコーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name, "Bさん", "Cさん", "Dさん"],
+    people: ["Eさん", "Fさん", "Gさん"],
+    trigger: "同級生を呼んでくれた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ノートに名前を書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "工芸学科について聞いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "お湯が沸いたのでコーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Bさん", "Cさん", "Dさん", "Eさん", "Fさん", "Gさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Hさん", "Iさん"],
+    trigger: "通りがかった知り合い",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ノートに名前を書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "就職についての話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "留学についての話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "お湯が沸いたのでコーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Hさん", "Iさん"],
+    trigger: "",
+    feeling: "",
+  },
+];
+
+<PostBasicInfo
+  date="2024-07-17"
+  weather="晴れのち雨"
+  temp="31"
+  place="東学広場"
+  startedAt="13:10"
+  endedAt="17:15"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="ふつう"
+  comment="記録のために自分で撮った"
+  photo="https://d3djg0dm3dsv8.cloudfront.net/a6b7207a60525d7eb1e3a211f8becf1e75d50f07d7c5055a809209d811780c0b.png"
+  client:load
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[
+    {
+      action: "説明パネルを追加した",
+      reason: "足を止めてもらうため",
+      photo:
+        "https://d3djg0dm3dsv8.cloudfront.net/8a2cea2ae0d641b2ad5a6915a67f872ae9e8999dc3ed29d7e5b8cc1a4019648f.png",
+    },
+    {
+      action: "パックのアイスコーヒーから、豆を挽いて淹れるようにした",
+      reason: "コーヒーを話題のきっかけにするため",
+      photo:
+        "https://d3djg0dm3dsv8.cloudfront.net/da8e24b74e0958c9184d56da55ae2d4dcee7bd65c63549666a37231118cc2064.jpg",
+    },
+  ]}
+  client:load
+/>
+
+## どのような場が生まれたのか
+
+<EventsInfo overview="" people={peopleWithColor} events={events} />
+
+## そこから私は何を感じたのか
+
+- 今までで一番大勢が来てくれた
+  - 来てくれる人数が増えると、ひとりひとりに向き合うことが難しくなる
+  - コーヒー豆を常に挽いている状態になってしまった
+  - Web サイトなどその場で話す以外に来てくれた人と交流する手段があると良い
+- 説明パネルのおかげで足を止めてくれる人は増えた
+  - しかし、パネルを読むだけで結局参加してくれないことが多く、さらなる工夫が必要だと感じた
+  - すでに人がいる場合、新しく来た人は参加しにくい
+- 知り合いを呼んでもらうことで、人数を比較的簡単に集められる
+- 東学広場は学科に偏りがある。工芸、プロダクト、絵画の学生が多い。
+  - 図書館の近くやクラブ棟など場所を変えると、来てくれる学生も変わりそう
+
+## 次に何をしようと思ったのか
+
+- 東学広場以外でやってみる
+- これは主観研究なので、自分自身の様子をもっと記録する
+  - この記事もその一環
+- 会話を記録する方法を考える
+  - カメラを置くだけでは記録しきれないこともある
