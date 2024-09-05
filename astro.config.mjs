@@ -10,7 +10,7 @@ import rehypeMyNotation from "./src/plugins/rehypeMyNotation";
 export default defineConfig({
   site: "https://blog.tsum.ug",
   integrations: [mdx(), sitemap(), react()],
-  vite: { optimizeDeps: { exclude: ["@resvg/resvg-js"] } },
+  vite: { optimizeDeps: { exclude: ["@resvg/resvg-js", "fs"] } },
   markdown: {
     rehypePlugins: [[rehypeMyNotation, {}]],
   },
