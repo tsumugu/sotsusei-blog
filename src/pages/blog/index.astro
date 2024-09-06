@@ -52,21 +52,35 @@ const posts = (await getCollection('blog')).sort(
 			ul li a {
 				display: block;
 			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
 			ul li a:hover h4,
 			ul li a:hover .date {
 				color: rgb(var(--accent));
 			}
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
+			}
+			.title {
+				margin: 0;
+				color: rgb(var(--black));
+				line-height: 1;
+			}
+			.date {
+				display: inline-block;
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			.categories {
+				display: inline-block;
+			}
+			.category {
+				width: auto !important;
+				display: inline-block;
+				padding: 0.25em 0.5em;
+				margin: 0.25em 0.5em 0.25em 0;
+				border-radius: 0.5em;
+				background-color: rgb(var(--gray-light));
+				color: rgb(var(--gray));
+				font-size: 0.75em;
 			}
 			@media (max-width: 720px) {
 				ul {
@@ -96,6 +110,9 @@ const posts = (await getCollection('blog')).sort(
 								<a href={`/blog/${post.slug}/`}>
 									<img width={720} height={360} src={new URL(`/og/${post.slug}.png`, Astro.url.origin).toString()} alt="" />
 									<h4 class="title">{post.data.title}</h4>
+									<ul class="categories">
+									{post.data.category?.map(cat=><li class="category">{cat}</li>)}
+									</ul>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
