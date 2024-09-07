@@ -1,0 +1,10 @@
+.prevPostLink,
+.nextPostLink {
+  display: inline-block;
+  margin-bottom: 1em !important;
+  padding: 0 !important;
+}
+
+.nextPostLink {
+  margin-left: 1em;
+}
