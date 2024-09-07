@@ -7,7 +7,7 @@ import Footer from '../components/Footer.astro';
 import PostComment from '../components/Blog/PostComment.tsx';
 import Share from '../components/Blog/Share.tsx';
 import FormattedDate from '../components/FormattedDate.jsx';
-import NextPost from '../components/Blog/NextPost.tsx';
+import NextPost from '../components/Blog/NextPost.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -114,7 +114,7 @@ const shareData = {
 								</div>
 								<div>
 									<hr />
-									<NextPost slug={thumb} client:load />
+									<NextPost slug={thumb} />
 								</div>
 								<div>
 									<hr />
