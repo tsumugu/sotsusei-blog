@@ -18,6 +18,7 @@ import {
   WEATHERS,
 } from "../../consts.js";
 import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+import { eventDates } from "../eventDates.js";
 
 export const peopleWithColor = convertPeopleWithColor([
   {
@@ -216,11 +217,10 @@ export const events = [
 
 <PostBasicInfo
   date="2024-07-09"
+  otherEventDates={eventDates}
   weather="晴れのち曇り"
   temp="31"
   place="東学広場"
-  startedAt="13:10"
-  endedAt="16:30"
 />
 
 ## 人について

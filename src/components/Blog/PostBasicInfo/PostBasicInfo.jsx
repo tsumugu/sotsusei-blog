@@ -8,17 +8,44 @@ import TamabiMap from "./TamabiMap/TamabiMap";
 import { Twemoji } from "react-emoji-render";
 import { WEATHERS } from "../../../consts";
 
-const PostBasicInfo = ({ date, weather, temp, place, startedAt, endedAt }) => {
+const PostBasicInfo = ({
+  otherEventDates = {},
+  date,
+  weather,
+  temp,
+  place,
+}) => {
+  const todayDate = new Date(date);
+  const startedAt = otherEventDates[date].startedAt;
+  const endedAt = otherEventDates[date].endedAt;
+
   return (
     <div className="post-basic-info">
       {date && (
         <div className="calendar cell">
           {/* <h5>日時</h5> */}
           <Calendar
-            value={new Date(date)}
+            value={todayDate}
             calendarType="iso8601"
             locale="ja-JP"
             formatDay={(_, date) => date.getDate()}
+            tileClassName={({ date }) => {
+              const dateMonth = date.getMonth();
+              const dateDate = date.getDate();
+              const isEventDate =
+                Object.keys(otherEventDates)
+                  .filter(
+                    (d) => new Date(d).toISOString() !== todayDate.toISOString()
+                  )
+                  .filter(
+                    (e) =>
+                      dateMonth == new Date(e).getMonth() &&
+                      dateDate == new Date(e).getDate()
+                  ).length > 0;
+              if (isEventDate) {
+                return "react-calendar__tile--othereventday";
+              }
+            }}
             prevLabel={null}
             prev2Label={null}
             nextLabel={null}

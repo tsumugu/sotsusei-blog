@@ -33,6 +33,12 @@
   /* border: 1px solid rgb(var(--gray)); */
 }
 
+.react-calendar__tile--othereventday {
+  background: var(--accent);
+  color: rgb(var(--white));
+  opacity: 0.5;
+}
+
 .weather {
   display: flex;
   flex-direction: column;
