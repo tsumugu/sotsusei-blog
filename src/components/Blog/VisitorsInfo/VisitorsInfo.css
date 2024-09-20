@@ -1,8 +1,71 @@
+:root {
+  --icon-size: 128px;
+  --bubble-tail-size: 25px;
+}
+
 .visitor-card {
   margin-bottom: 1em;
+
+  display: flex;
+  align-items: center;
+}
+
+.visitor-info {
+  display: inline-block;
   padding: 1em;
-  /* box-shadow: var(--box-shadow); */
+  max-width: calc(100% - 2em);
+  height: calc(128px - 2em);
+  margin-left: 1.5em;
+  position: relative;
+
   border: 1px solid rgb(var(--gray));
+  border-left: 1px solid rgb(var(--gray));
+  border-bottom: 3px solid rgb(var(--gray));
+}
+
+.visitor-info {
+  display: inline-block;
+  padding: 1em;
+  max-width: calc(100% - 2em);
+  height: calc(128px - 2em);
+  margin-left: 1.5em;
+  position: relative;
+
+  border: 1px solid rgb(var(--gray));
+
+  position: relative;
+}
+
+/* .visitor-info::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px
+  height: calc((128px - 2em) / 2);
+  background-color: rgb(var(--gray));
+} */
+
+.visitor-info:before {
+  position: absolute;
+  top: calc(50% - calc(var(--bubble-tail-size) / 2));
+  left: -9px;
+  transform: skew(-25deg) rotate(-56deg);
+  height: var(--bubble-tail-size);
+  width: 15px;
+  border-top: 1px solid rgb(var(--gray));
+  border-left: 1px solid rgb(var(--gray));
+  background-color: #fff;
+  content: "";
+}
+
+.visitor-info p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.icon {
+  width: 128px;
+  height: 128px;
 }
 
 .name,

@@ -15,13 +15,15 @@ const VisitorsInfo = ({ visitors }) => {
           <div className="visitor-card">
             <img
               src={item.photo ? item.photo : item.department.icon}
-              width="128px"
               style={{ background: item.color }}
+              className="icon"
             />
-            <p className="name">{item.name}</p>
-            <p className="dept">
-              {item.department.name} {item.grade}
-            </p>
+            <div className="visitor-info">
+              <p className="name">{item.name}</p>
+              <p className="dept">
+                {item.department.name} {item.grade}
+              </p>
+            </div>
           </div>
         );
       })}

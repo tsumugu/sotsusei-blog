@@ -14,6 +14,7 @@
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
   --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --h2-bottom-space: 1em;
 }
 body {
   font-family: sans-serif;
@@ -49,6 +50,7 @@ h1 {
 }
 h2 {
   font-size: 2.441em;
+  margin-top: var(--h2-bottom-space);
 }
 h3 {
   font-size: 1.953em;
