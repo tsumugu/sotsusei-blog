@@ -1,0 +1,652 @@
+---
+title: "会話を文字起こしした"
+description: "2024/9/10にフリーコーヒーを行った記録"
+pubDate: "2024/9/10"
+isWriting: false
+thumb: "record-24910"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+import { eventDates } from "../eventDates.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "S.Hさん",
+    department: DEPARTMENT_AND_ICONS.textile,
+    grade: "4年生",
+  },
+  {
+    name: "Y.Aさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "1年生",
+  },
+]);
+
+export const events = [
+  {
+    type: "normarl",
+    event: "図書館前の様子を見に行った",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "人が比較的多い東学広場に移動した",
+    feeling:
+      "図書館前は人がいないのと、机や椅子がないので落ち着けないことから場所を変えた",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーのためにコンビニで水を買った。",
+    feeling: "2Lで108円",
+  },
+  {
+    type: "normarl",
+    event: "広場でテーブルの周りに看板などを設置した",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["S.Hさん"],
+    trigger: "看板を見て声をかけてくれた",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "section",
+    text: "自己紹介をした",
+  },
+  {
+    type: "talk",
+    content: "テキスタイルのS.Hです。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "情報デザイン学科の山口です。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "section",
+    text: "フリーコーヒーについて話した",
+  },
+  {
+    type: "talk",
+    content: "これ(フリーコーヒー)は前からやられてるんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "7月くらいから。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "あ、そんな前から。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "はい、夏休み期間があったので回数としては4回くらいですけど。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "なかなか人も来ないですからね。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "どうしてフリーコーヒーをしているんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "自分の最終目標としては、ここ(看板を指差し)にも書いてあるんですけど、見ず知らずの人が集まって話ができるような環境を作りたいです。普通、デザインはテキスタイルもそうだと思うんですけど、ものをデザインするんですけど、自分の場合は状況をデザインしようとしています。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content:
+      "そこに向かって仮説を立てたうえで、その仮説をフィールドワークで実際に検証してくというようなことをしています。最終的な研究の形としては、Webサイト・ブログみたいな形にしようかなと思っています。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "なるほど。コーヒーを振る舞っているのは理由があるんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "フリーコーヒーをしている方がいて、その影響です。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "そうなんだ",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "自分がコーヒーが好きというよりは、人が集まる方法を探していた時にフリーコーヒーを見つけて取り入れました。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "屋台でどこか行ったりしないんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "屋台はいいなと思っているんですけど、大掛かりすぎるかな。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "屋台があると目を引くからよさそう",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "normarl",
+    event: "この記録Webサイトを見せた",
+    feeling: "",
+  },
+  {
+    type: "talk",
+    content: "すごい、自分で作ったんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "はい、毎回記録をとってます。レイアウトはこれから直したいですけど",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "normarl",
+    event: "お湯が沸いたのでコーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "talk",
+    content: "どうぞ、召し上がってください。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content:
+      "素敵ですね。この空間(東学広場)がそもそも素敵なので、この場所でなにか人が集まることが出来たら良いですね",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "本当にそうですね。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "街中でフリーコーヒーをしている人にあったらテンション上がります。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "街中は少し怖いというか、多摩美生同士のほうがハードルが低いというのはあります。学生同士の方が自分も話しやすいし、全くの見ず知らずの人に絡まれたりもないので。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "section",
+    text: "就職について話した",
+  },
+  {
+    type: "talk",
+    content: "就職は決まってるんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "はい、もう決まってます。IT系です。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "S.Hさんは？",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content:
+      "僕は院に進もうと思っています。テキスタイルじゃなくてファイン系なんですけど。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "テキスタイルの院じゃないんですね。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content:
+      "テキスタイルは結局売れるものを求められてしまうので、作家性を発揮したいとなると難しいです。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "なるほど...確かに売れるものと作家性の両立は難しいですね。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "section",
+    text: "情報デザイン学科(情デ)について話した",
+  },
+  {
+    type: "talk",
+    content: "情デはどんな授業があるんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "毎年結構変わるんですけど、自分の時は1年次にプログラミングの授業があって、あとは造形科目っていうパソコンでデザインをしたり絵を描いたりする授業もありました。2年になると選択になるので、各々の興味によって授業を組み立てていく感じです。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content:
+      "自分は経験デザイン領域の授業を中心にとっていました。スマホアプリをデザインする授業とか。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "経験デザインっていうのは？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "ユーザーが何か物を使う時に、例えばスマホアプリだとすると、まず手に取って電源ボタンを押して、次にスワイプしてロックを解除する、みたいな一連の動作も経験です。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content:
+      "さらに幅広くとらえると、大学に来て、授業を受けて、広場で座って今話しているというのも経験です。経験は範囲がどこまででも広げられるのである程度の範囲に絞ってデザインするイメージです。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "うわすごい、面白い。初めて知りました。いいですね。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "他には映像の授業や3Dモデリングの授業もあります。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "じゃあ何でも屋なんですね。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "そうですね、ただ、みんな色々手を広げすぎて自分って何者なんだっけってなるのが情デあるあるです。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "section",
+    text: "卒制について話した",
+  },
+  {
+    type: "talk",
+    content: "卒制はどういう作品をつくろうとしているんですか？",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "染色ってわかりますか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "藍染しかわからないです",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "型枠を作って、布に型を乗せて色をつけるんです。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "なるほど。面白いですね。大きさは？",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "大きさはだいたい4mくらいです",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "すごく大きい。卒制展の展示も大変ですね。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "頑張らないとです。ぜひ展示に来て欲しいです。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "section",
+    text: "この取り組みについて話した",
+  },
+  {
+    type: "talk",
+    content:
+      "いやー、男の子と話せて嬉しいです。アトリエ(=ゼミ)には男子が僕1人しかいないので。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "そうなんですか！自分の学科ばかりで他の学科の人とは話さないという状況を想定していたんですけど、同性と話さないっていうのは考えていなかった。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "需要あると思います。こうやって学科以外の人と話したいって",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "留学生にとってもこういう場があるとありがたいみたいです。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "section",
+    text: "どういう話をするかについて",
+  },
+  {
+    type: "talk",
+    content: "確かにこれ良いですね。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "日陰は涼しくて過ごしやすいですよね。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "全然面白い話題を持ってない。普段はどういう話をしているんですか？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "授業でどういうことをしているんですかっていうのは自分も気になるので良くしますね。あと、この取り組みについてもよく話しますね。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "こういう取り組みってあまり見たことがないですね。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "プロダクトの先輩で卒制でコーヒー屋をやっている人はいたみたいです。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "いつまでやろうと思ってるんですか？卒業まで？",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content: "冬休み前の12月まではやろうかなと思ってます。",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "talk",
+    content: "冬はホットコーヒーが人気そうですね。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "section",
+    text: "記録への協力をお願いした",
+  },
+  {
+    type: "talk",
+    content: "そろそろ次の授業が始まるので行かないと",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "talk",
+    content:
+      "会話内容を公開してもいいですか？っていう同意をとりたくて、お願いしても良いですか？",
+    feeling: "",
+    people: [TSUMUGU_PROFILE_JSON.name],
+  },
+  {
+    type: "normarl",
+    event: "スマホでGoogleフォームを開いて入力してもらった",
+    feeling: "",
+  },
+  {
+    type: "talk",
+    content: "体調に気をつけて。",
+    feeling: "",
+    people: ["S.Hさん"],
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["S.Hさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event:
+      "休み時間とかぶってしまって全然人が来なかったので人の流れを観察した。",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん"],
+    trigger: "看板を見てこちらに来てくれた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科についての話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "お湯が沸いたのでコーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "サークルについての話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん"],
+    trigger: "",
+    feeling: "",
+  },
+];
+
+## 今回の気付き
+
+- 会話の文字起こしについて
+  - 会話をまとめるのが大変すぎる。30分間の会話を文字起こしするために 1時間半くらいかかった。
+  - 文字起こしアプリを使ったが、精度が低く、内容を自分で補完する必要があった。
+  - 2人目は録音に失敗してしまった。1人目も失敗してしまったが、カメラ映像にも会話が記録されていたので文字起こし出来た。
+  - 文字起こしだと会話の空気感が伝わりきらない。声色をフォントで伝えるなど工夫してもいいかもしれない。
+  - そもそも会話を文字起こしするのは面白いのだろうか？
+- 看板の効果を確かめるために今回はなるべく声をかけなかったが、人少なかったので良くなかった。
+- 人の流れについて
+  - 休み時間に人が多く、それ以外の時間はあまり人がいない。
+  - 休み時間中は広場を横切ってデザイン棟やリベラルアーツセンター(共通教育棟)へ向かう人が多い。
+    - この人たちに声をかけても断られてしまう。
+  - 休み時間が終わると、コンビニに行くために東学広場を通る人が増える。
+    - この人たちが狙い目
+- 人の流れは時間によって変わるので、看板の向きや位置が大事。
+  - 屋台は全方位から見える看板の役割をしそう。
+- 椅子と机があって人が多い場所は東学広場しかないので、現状そこ一択になってしまっている。
+- サークルがこの取り組みに近いように感じた。サークルとの差別化を考える必要がある。
+  - サークルよりも流動性が高い。
+
+## 今回の面白さ
+
+- 会話を文字起こししたので、読み物としての面白さがある。
+
+## 基本情報
+
+<PostBasicInfo
+  date="2024-09-10"
+  otherEventDates={eventDates}
+  weather="晴れ"
+  temp="34"
+  place="東学広場"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="ふつう"
+  comment="夏休み明け初回で感覚を取り戻したい"
+  photo="https://d3djg0dm3dsv8.cloudfront.net/536550ad2ed7dd96d617f30f7f3c9a3fcf52fb0a3c477bcb362787d903481141.png"
+  client:load
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## どのような場が生まれたのか
+
+<EventsInfo overview="" people={peopleWithColor} events={events} />
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[
+    {
+      action: "会話を文字起こしした",
+      reason: "読み物として面白くするため",
+    },
+    {
+      action: "来てくれた人の名前をイニシャルで表記するようにした",
+      reason: "名前がA、B、Cでは無味すぎるため",
+    },
+    {
+      action: "紙コップで提供した",
+      reason: "洗い物を減らすため",
+    },
+    {
+      action: "ノートを使わずにアンケートフォームで名前を記録した",
+      reason: "ノートを忘れたため。次回はノートを置く予定。",
+    },
+  ]}
+  client:load
+/>
+
+## 次に何をしようと思ったのか
+
+- アプリで音声をきちんと記録して、文字起こしを効率化する
+- ノートを再び置く
+- アンケートフォームで読み仮名も記録するようにする
+- 2人以上が同時に集まるようにするための施策をする
+  - 看板に途中参加OKと書く
