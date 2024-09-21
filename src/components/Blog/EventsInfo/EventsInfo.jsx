@@ -25,6 +25,17 @@ const EventsInfo = ({ events, people }) => {
     }
   };
 
+  const getPersonIconFromName = (name, className = "") => {
+    const person = people.find((p) => p.name === name);
+    return (
+      <img
+        className={className}
+        src={person.photo ? person.photo : person.department.icon}
+        style={{ background: person.color }}
+      />
+    );
+  };
+
   return (
     <div className="timeline">
       {events.map((eventData, index) => (
@@ -34,8 +45,10 @@ const EventsInfo = ({ events, people }) => {
             eventData.type === "normarl"
               ? "normal-event"
               : eventData.type === "join"
-              ? "join-event"
-              : "leave-event"
+                ? "join-event"
+                : eventData.type === "left"
+                  ? "leave-event"
+                  : "talk-event"
           }`}
         >
           {(eventData.type === "join" || eventData.type === "left") && (
@@ -44,8 +57,8 @@ const EventsInfo = ({ events, people }) => {
                 {eventData.trigger
                   ? eventData.trigger
                   : eventData.type === "join"
-                  ? "参加"
-                  : "退出"}
+                    ? "参加"
+                    : "退出"}
               </p>
               {eventData.feeling && (
                 <p className="feeling">{eventData.feeling}</p>
@@ -55,7 +68,7 @@ const EventsInfo = ({ events, people }) => {
           {(eventData.type === "join" || eventData.type === "left") && (
             <div
               className={`person-container ${getPersonContainerClassName(
-                eventData.people.concat(eventData.stay)
+                eventData.people.concat(eventData.stay),
               )}`}
             >
               {eventData.people.concat(eventData.stay).map((personId) => {
@@ -67,8 +80,8 @@ const EventsInfo = ({ events, people }) => {
                       eventData.stay.includes(personId)
                         ? ""
                         : eventData.type === "join"
-                        ? "join"
-                        : "left"
+                          ? "join"
+                          : "left"
                     }`}
                     style={{
                       gridArea:
@@ -87,11 +100,7 @@ const EventsInfo = ({ events, people }) => {
                       <p className="person-department">{person.department.name}</p>
                       <p className="person-grade">{person.grade}</p>
                     </div> */}
-                    <img
-                      className={`person-circle`}
-                      src={person.photo ? person.photo : person.department.icon}
-                      style={{ background: person.color }}
-                    />
+                    <>{getPersonIconFromName(person.name, "person-circle")}</>
                   </div>
                 );
               })}
@@ -109,6 +118,28 @@ const EventsInfo = ({ events, people }) => {
             <div className="event-bubble">
               <p className="event-text">{eventData.event}</p>
               <small className="event-feeling">{eventData.feeling}</small>
+            </div>
+          )}
+          {eventData.type === "talk" && (
+            <div
+              className={
+                eventData.people.includes(TSUMUGU_PROFILE_JSON.name)
+                  ? "talk-bubble bubble-left"
+                  : "talk-bubble bubble-right"
+              }
+            >
+              <ul className="talk-person-info">
+                {eventData.people.map((name) => (
+                  <li>
+                    {getPersonIconFromName(name, "talk-person-circle")}
+                    <p className="talk-person-name">{name}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="talk-bubble-content">
+                <p className="talk-text">{eventData.content}</p>
+                <small className="talk-feeling">{eventData.feeling}</small>
+              </div>
             </div>
           )}
         </div>

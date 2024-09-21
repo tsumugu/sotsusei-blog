@@ -39,6 +39,10 @@
   opacity: 0.5;
 }
 
+.react-calendar__tile--now {
+  background: var(--white);
+}
+
 .weather {
   display: flex;
   flex-direction: column;

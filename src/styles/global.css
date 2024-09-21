@@ -12,6 +12,7 @@
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
+  --bubble-border: 165, 169, 173;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
   --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   --h2-bottom-space: 1em;

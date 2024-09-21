@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: 1em;
+  gap: 0.5em;
 }
 
 .event-container {
@@ -27,7 +28,8 @@
   margin-top: 18px;
 }
 
-.event-container.normal-event {
+.event-container.normal-event,
+.event-container.talk-event {
   padding: 0px;
   aspect-ratio: auto;
   align-items: flex-start;
@@ -146,7 +148,8 @@
   border-radius: 50%;
 }
 
-.event-text {
+.event-text,
+.talk-text {
   margin: 0 !important;
   padding: 0 !important;
   font-size: 16px;
@@ -157,6 +160,72 @@
   font-size: 12px;
   color: #666;
 }
+
+.talk-bubble {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.5em;
+  align-items: top;
+}
+
+.talk-bubble ul {
+  list-style: none;
+  padding: 0;
+}
+
+.talk-person-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5em 0 0.5em 0 !important;
+}
+
+.talk-person-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+.talk-person-name {
+  font-size: 16px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.talk-bubble-content {
+  /* border-left: 1px solid rgb(var(--bubble-border)); */
+  min-height: calc(100% - 2em);
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* :root {
+  --icon-size: 128px;
+  --bubble-tail-size: 25px;
+}
+
+.talk-bubble-content::before {
+  position: absolute;
+  top: calc(50% - calc(var(--bubble-tail-size) / 2));
+  left: -9px;
+  transform: skew(-25deg) rotate(-56deg);
+  height: var(--bubble-tail-size);
+  width: 15px;
+  border-top: 1px solid rgb(var(--bubble-border));
+  border-left: 1px solid rgb(var(--bubble-border));
+  background-color: #fff;
+  content: "";
+} */
 
 .person,
 .table {
