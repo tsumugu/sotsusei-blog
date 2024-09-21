@@ -142,6 +142,11 @@ const EventsInfo = ({ events, people }) => {
               </div>
             </div>
           )}
+          {eventData.type === "section" && (
+            <div className="section">
+              <p className="section-text">{eventData.text}</p>
+            </div>
+          )}
         </div>
       ))}
     </div>
