@@ -23,7 +23,6 @@ const PostBasicInfo = ({
     <div className="post-basic-info">
       {date && (
         <div className="calendar cell">
-          {/* <h5>日時</h5> */}
           <Calendar
             value={todayDate}
             calendarType="iso8601"
@@ -35,12 +34,13 @@ const PostBasicInfo = ({
               const isEventDate =
                 Object.keys(otherEventDates)
                   .filter(
-                    (d) => new Date(d).toISOString() !== todayDate.toISOString()
+                    (d) =>
+                      new Date(d).toISOString() !== todayDate.toISOString(),
                   )
                   .filter(
                     (e) =>
                       dateMonth == new Date(e).getMonth() &&
-                      dateDate == new Date(e).getDate()
+                      dateDate == new Date(e).getDate(),
                   ).length > 0;
               if (isEventDate) {
                 return "react-calendar__tile--othereventday";
@@ -55,19 +55,16 @@ const PostBasicInfo = ({
       )}
       {startedAt && endedAt && (
         <div className="time cell">
-          {/* <h5>時間</h5> */}
           <Clock startedAt={startedAt} endedAt={endedAt} />
         </div>
       )}
       {place && (
         <div className="place cell">
-          {/* <h5>場所</h5> */}
           <TamabiMap place={place} />
         </div>
       )}
-      {weather && (
+      {/* {weather && (
         <div className="weather cell">
-          {/* <h5>天気</h5> */}
           <div className="weather-inner">
             <div className="emoji-text-wrapper">
               <Twemoji className="emoji" text={WEATHERS[weather]} />
@@ -76,7 +73,7 @@ const PostBasicInfo = ({
             <p className="temp">{temp}℃</p>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

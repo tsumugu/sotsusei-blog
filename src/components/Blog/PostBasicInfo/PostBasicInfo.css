@@ -6,9 +6,25 @@
 .post-basic-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2em;
-  padding-bottom: 1em;
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template-areas:
+    "calender clock"
+    "map map";
+  gap: 20px;
+  /* padding-bottom: 20px; */
+  margin-top: 20px;
+}
+
+.calendar {
+  grid-area: calender;
+}
+
+.time {
+  grid-area: clock;
+}
+
+.place {
+  grid-area: map;
 }
 
 .cell {
