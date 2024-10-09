@@ -6,12 +6,10 @@
 .post-basic-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr; */
   grid-template-areas:
     "calender clock"
     "map map";
   gap: 20px;
-  /* padding-bottom: 20px; */
   margin-top: 20px;
 }
 

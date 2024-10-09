@@ -1,38 +1,68 @@
 .clock {
   width: 100%;
+  height: 100%;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.number {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 18px;
+.today-info {
+  margin: 1rem;
 }
 
-.time-text {
-  position: absolute;
-  text-align: center;
-}
-.time-text p {
-  margin: 0 !important;
+.today-info p {
+  margin: 0;
   padding: 0;
 }
-.time-dur {
-  font-weight: bold;
+
+.charts {
+  width: 100%;
+  /* height: 100%; */
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+
+  font-size: 0.75em;
 }
 
-.circle {
-  transform: rotate(-90deg);
+.charts-inner {
+  width: 100%;
+  height: 100%;
 }
 
-.progress {
-  stroke: var(--accent);
+.charts-inner p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-.bg {
-  stroke: rgb(var(--gray-light));
+.chartbar-wrapper {
+  width: 100%;
+  height: 65%;
+
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.chartbar {
+  width: 50%;
+  border: 1px solid var(--accent);
+}
+
+.default {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent),
+    var(--accent) 3px,
+    rgb(var(--white)) 3px,
+    rgb(var(--white)) 6px
+  );
+  opacity: 0.5;
+}
+
+.today {
+  background-color: var(--accent);
 }

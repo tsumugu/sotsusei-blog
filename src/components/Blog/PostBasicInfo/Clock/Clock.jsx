@@ -1,81 +1,91 @@
 import React from "react";
 import "./Clock.css";
+import { convertHoursAndMinutesToMinutes } from "../../../../utils/convertHoursAndMinutesToMinutes";
 import { convertMinutesToHoursAndMinutes } from "../../../../utils/convertMinutesToHoursAndMinutes";
+import { convertYMD } from "../../../../utils/convertYMD";
 
-const Clock = ({ startedAt, endedAt }) => {
-  const numbers = Array.from({ length: 12 }, (_, i) => i + 1);
-  const parseTime = (timeStr) => {
-    const [hours, minutes] = timeStr.split(":").map(Number);
-    return (hours % 12) * 60 + minutes;
+const Clock = ({ otherEventDates, eventDate }) => {
+  const getSurroundingEvents = (events, targetDate) => {
+    const dates = Object.keys(events).sort((a, b) => new Date(a) - new Date(b));
+    const targetIndex = dates.indexOf(targetDate);
+
+    if (targetIndex === -1) {
+      return {}; // 対象の日付が存在しない場合、空のオブジェクトを返す
+    }
+
+    // 対象の日の前後2つ（合計5つ）を取得する範囲を計算
+    const start = Math.max(0, targetIndex - 2);
+    const end = Math.min(dates.length, targetIndex + 3); // targetIndexを含むため+3
+
+    // 範囲内のイベントをオブジェクト形式で返す
+    const result = {};
+    dates.slice(start, end).forEach((date) => {
+      result[date] = events[date];
+    });
+
+    return result;
   };
 
-  const startMinutes = parseTime(startedAt);
-  const endMinutes = parseTime(endedAt);
+  const getMaxDurMinutes = (surroundingEvents) => {
+    const maxDurMinutesArr = Object.keys(surroundingEvents)
+      .map((k) => surroundingEvents[k]["durMinutes"])
+      .sort()
+      .reverse();
+    if (maxDurMinutesArr.length > 0) {
+      return maxDurMinutesArr[0];
+    }
+    return 0;
+  };
 
-  const totalMinutesIn12Hours = 12 * 60;
-  const circumference = 2 * Math.PI * 45; // 半径45の円の周長
+  const surroundingEvents = getSurroundingEvents(otherEventDates, eventDate);
+  const maxDirMinutes = getMaxDurMinutes(surroundingEvents);
 
-  let progress = endMinutes - startMinutes;
-  if (progress < 0) {
-    progress += totalMinutesIn12Hours; // 12時間を超える場合の処理
-  }
+  // 時間の処理
+  const startedAt = otherEventDates[eventDate].startedAt;
+  const endedAt = otherEventDates[eventDate].endedAt;
 
-  const dashArrayValue = (progress / totalMinutesIn12Hours) * circumference;
-  const offsetValue = (startMinutes / totalMinutesIn12Hours) * circumference;
+  const startMinutes = convertHoursAndMinutesToMinutes(startedAt);
+  const endMinutes = convertHoursAndMinutesToMinutes(endedAt);
+
+  const totalHoursAndMinutes = convertMinutesToHoursAndMinutes(
+    endMinutes - startMinutes,
+  );
 
   return (
     <div className="clock">
-      <div className="time-text">
+      <div className="today-info">
         <p>
-          {startedAt}-{endedAt}
+          {startedAt} - {endedAt}
         </p>
-        <p className="time-dur">
-          {convertMinutesToHoursAndMinutes(endMinutes - startMinutes)}
-        </p>
+        <p>{totalHoursAndMinutes}</p>
       </div>
-      {numbers.map((number, index) => {
-        const angle = (index + 1) * 30;
-        const x = 50 + 36 * Math.cos((angle - 90) * (Math.PI / 180));
-        const y = 50 + 36 * Math.sin((angle - 90) * (Math.PI / 180));
-
-        return (
-          <div
-            key={number}
-            className="number"
-            style={{
-              top: `${y}%`,
-              left: `${x}%`,
-            }}
-          >
-            {number}
-          </div>
-        );
-      })}
-      <svg viewBox="0 0 100 100" className="circle">
-        <circle
-          cx="50"
-          cy="50"
-          r="45"
-          stroke="lightgrey"
-          strokeWidth="4"
-          fill="none"
-          className="bg"
-        />
-        <circle
-          cx="50"
-          cy="50"
-          r="45"
-          stroke="blue"
-          strokeWidth="5"
-          fill="none"
-          strokeDasharray={`${dashArrayValue} ${
-            circumference - dashArrayValue
-          }`}
-          strokeDashoffset={circumference - offsetValue}
-          strokeLinecap="round"
-          className="progress"
-        />
-      </svg>
+      <div className="charts">
+        {Object.keys(surroundingEvents).map((key) => {
+          const heightPer =
+            (surroundingEvents[key].durMinutes / maxDirMinutes) * 100;
+          return (
+            <div className="charts-inner">
+              <p className="minutes">
+                {convertMinutesToHoursAndMinutes(
+                  surroundingEvents[key].durMinutes,
+                  true,
+                )}
+              </p>
+              <div className="chartbar-wrapper">
+                <div
+                  className={
+                    key == eventDate ? "chartbar today" : "chartbar default"
+                  }
+                  style={{
+                    height: heightPer + "%",
+                  }}
+                ></div>
+              </div>
+              <p className="date">{convertYMD(key)}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

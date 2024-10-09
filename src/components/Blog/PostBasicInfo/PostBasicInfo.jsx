@@ -16,8 +16,6 @@ const PostBasicInfo = ({
   place,
 }) => {
   const todayDate = new Date(date);
-  const startedAt = otherEventDates[date].startedAt;
-  const endedAt = otherEventDates[date].endedAt;
 
   return (
     <div className="post-basic-info">
@@ -53,11 +51,9 @@ const PostBasicInfo = ({
           />
         </div>
       )}
-      {startedAt && endedAt && (
-        <div className="time cell">
-          <Clock startedAt={startedAt} endedAt={endedAt} />
-        </div>
-      )}
+      <div className="time cell">
+        <Clock otherEventDates={otherEventDates} eventDate={date} />
+      </div>
       {place && (
         <div className="place cell">
           <TamabiMap place={place} />
