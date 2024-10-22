@@ -1,0 +1,183 @@
+---
+title: "ノートがカオスになってきた"
+description: "2024/10/10にフリーコーヒーを行った記録"
+pubDate: "2024/10/10"
+isWriting: false
+thumb: "record-241007"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+import { eventDates } from "../eventDates.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "Mさん",
+    department: DEPARTMENT_AND_ICONS.media,
+    grade: "2年生",
+  },
+  {
+    name: "Kさん",
+    department: DEPARTMENT_AND_ICONS.env,
+    grade: "2年生",
+  },
+  {
+    name: "Wさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "4年生"
+  },
+]);
+
+export const events = [
+  {
+    type: "normarl",
+    event: "コーヒーのためにコンビニで水を買った。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "広場でテーブルの周りに看板などを設置した",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Mさん"],
+    trigger: "看板を見て声をかけてくれた",
+  },
+  {
+    type: "normarl",
+    event: "コーヒー豆を挽いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "好きな物を紹介し合った",
+    feeling: "猫と犬の話をした",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Mさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Kさん"],
+    trigger: "看板を見て声をかけてくれた",
+  },
+  {
+    type: "normarl",
+    event: "猫の話をした",
+    feeling: "猫を2匹飼っているらしい。写真も見せてもらった",
+  },
+  {
+    type: "normarl",
+    event: "留学生のコミュニケーションの話をした",
+    feeling: "中国の中学高校にはクラブ活動の習慣がないらしい",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Kさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Wさん"],
+    trigger: "看板を見て声をかけてくれた",
+  },
+  {
+    type: "normarl",
+    event: "フリーコーヒーについての話をした",
+    feeling: "同じゼミで、来てみたかったと言ってくれた",
+  },
+  {
+    type: "normarl",
+    event: "趣味の話をした",
+    feeling: "話すだけではなく、ノートにたくさん書いてくれた",
+  },
+  {
+    type: "left",
+    stay: [],
+    people: ["Wさん", TSUMUGU_PROFILE_JSON.name],
+    trigger: "",
+    feeling: "",
+  },
+];
+
+## 今回の気付き
+
+- 自分がノートをメモ帳のように使ったことで、参加者がノートを書くハードルが下がった。
+  - 自分の好きなものをまとめた「偏愛マップ」と、場作りのメモをノートに書いた
+- 会話を録音して文字起こしするのは手間がかかるが、会話しながらノートを書くのは負担が少ない。
+  - 会話を思い出す、具体的な内容を楽しむという目的はこれでも達成できる。
+
+## 今回の面白さ
+
+- 偏愛マップからペットの話など、共通の話題を見つけやすくなった。
+- 同級生が初めて来てくれた。
+  - 同じゼミなので、話を聞いて興味を持ってくれた。
+  - 同級生でも知らないことばかりで新鮮だった。
+
+## 基本情報
+
+<PostBasicInfo
+  date="2024-10-10"
+  otherEventDates={eventDates}
+  weather="晴れ"
+  temp="22"
+  place="東学広場"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="元気"
+  comment="前回よりは緊張が少ない"
+  photo=""
+  client:load
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## どのような場が生まれたのか
+
+<EventsInfo overview="" people={peopleWithColor} events={events} />
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[
+    {
+      action: "自分の好きなものをまとめた「偏愛マップ」をノートに書いた",
+      reason: "共通の話題を見つけやすくするため",
+    }
+  ]}
+  client:load
+/>
+
+## 次に何をしようと思ったのか
+
+- SNSを活用して告知する
+- 看板を黒板にする
+
