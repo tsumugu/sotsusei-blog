@@ -1,0 +1,291 @@
+---
+title: "いとこが来てくれた"
+description: "2024/10/17にフリーコーヒーを行った記録"
+pubDate: "2024/10/17"
+isWriting: false
+thumb: "record-241017"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+import { eventDates } from "../eventDates.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "S.Nさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "2年生",
+  },
+  {
+    name: "H.Yさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "1年生",
+  },
+  {
+    name: "M.Yさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "A.Hさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "T.Uさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "1年生"
+  },
+  {
+    name: "M.Dさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "H.Tさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "T.T(1年)さん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "I.Dさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "B.Jさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "1年生"
+  },
+  {
+    name: "T.T(4年)さん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "4年生",
+  },
+  {
+    name: "A.Wさん",
+    department: DEPARTMENT_AND_ICONS.interaction,
+    grade: "4年生",
+    memo: "2回目"
+  },
+]);
+
+
+export const events = [
+  {
+    type: "normarl",
+    event: "コーヒーのためにコンビニで水を買った。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "広場でテーブルの周りに看板などを設置した",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["S.Nさん", "H.Yさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "イラストを描いてくれた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["S.Nさん", "H.Yさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["M.Yさん", "A.Hさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "授業の作品「あきばこ」の話をした",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["T.Uさん"],
+    trigger: "A.Hさんの友人で、偶然通りがかったところに参加してくれた",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "T.Uさんが芸祭で売るゲーム機の話をした",
+    feeling: "パッケージのクオリティが高くて驚いた",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["M.Dさん", "H.Tさん", "T.T(1年)さん", "I.Dさん", "B.Jさん"],
+    trigger: "M.Yさん、A.Hさん、T.Uさんの友人で、偶然通りがかったところに参加してくれた",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["M.Yさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["T.T(4年)さん", "A.Wさん"],
+    trigger: "同じゼミの2人で、A.Wさんは2回目の参加",
+  },
+   {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "全員で授業の話などをした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "同級生のTさんが通りがかったので写真を撮ってもらった",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["A.Hさん", "T.Uさん", "M.Dさん", "H.Tさん", "T.T(1年)さん", "I.Dさん", "B.Jさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "T.T(4年)さんに偏愛マップを描いてもらった",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["T.T(4年)さん", "A.Wさん"],
+    trigger: "",
+    feeling: "",
+  },
+];
+
+## 今回の気付き
+
+- 同じ学科の人が集まった
+  - 偶然通りがかった知り合いを招くことが連鎖して人数が増えることがある
+  - 7/17にもガラス専攻の人が集まったことがあったが、それと同じパターン
+- 人数が多いとコーヒーを淹れるのが大変
+
+## 今回の面白さ
+
+- 同級生でも知らないことばかりなので新鮮だった
+
+## 基本情報
+
+<PostBasicInfo
+  date="2024-10-17"
+  otherEventDates={eventDates}
+  weather="曇り"
+  temp="26"
+  place="東学広場 テキスタイル棟側"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="元気"
+  comment="看板を新調したのでやる気"
+  photo=""
+  client:load
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## どのような場が生まれたのか
+
+<EventsInfo overview="" people={peopleWithColor} events={events} />
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[
+     {
+      action: "看板が黒板になった",
+      reason: "カフェに寄せて興味を惹くため、内容を書き換えやすくするため",
+    }
+  ]}
+  client:load
+/>
+
+## 次に何をしようと思ったのか
+
+- テーブルを綺麗にする
+  - 砂糖とミルクを紙コップに入れるのをやめる
+
