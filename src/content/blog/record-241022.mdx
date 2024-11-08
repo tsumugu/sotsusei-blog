@@ -1,0 +1,370 @@
+---
+title: "初対面の人同士で会話が生まれた"
+description: "2024/10/22にフリーコーヒーを行った記録"
+pubDate: "2024/10/22"
+isWriting: false
+thumb: "record-241022"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+import { eventDates } from "../eventDates.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "Y.Aさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "1年生",
+    memo: "2回目"
+  },
+  {
+    name: "Y.Yさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "1年生"
+  },
+  {
+    name: "S.Yさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "1年生"
+  },
+  {
+    name: "H.Tさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "1年生"
+  },
+  {
+    name: "H.Sさん",
+    department: DEPARTMENT_AND_ICONS.env,
+    grade: "1年生"
+  },
+  {
+    name: "I.Aさん",
+    department: DEPARTMENT_AND_ICONS.env,
+    grade: "1年生"
+  },
+  {
+    name: "Y.Mさん",
+    department: DEPARTMENT_AND_ICONS["graphic-art"],
+    grade: "3年生"
+  },
+  {
+    name: "Gさん",
+    department: DEPARTMENT_AND_ICONS.works,
+    grade: "3年生"
+  },
+  {
+    name: "N.Kさん",
+    department: DEPARTMENT_AND_ICONS.textile,
+    grade: "3年生",
+    memo: "4回目"
+  },
+  {
+    name: "Y.Tさん",
+    department: DEPARTMENT_AND_ICONS.textile,
+    grade: "3年生"
+  },
+  {
+    name: "H.Kさん",
+    department: DEPARTMENT_AND_ICONS.textile,
+    grade: "3年生"
+  },
+  {
+    name: "N.Eさん",
+    department: DEPARTMENT_AND_ICONS.textile,
+    grade: "3年生"
+  }
+]);
+
+export const events = [
+  {
+    type: "normarl",
+    event: "コーヒーのためにコンビニで水を買った。",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "広場でテーブルの周りに看板などを設置した",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "Y.Aさんが作ろうとしている学生団体の近況を聞いた。",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Yさん", "S.Yさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ストラップについて聞いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "Y.YさんとS.YさんがY.Aさんに質問していた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "Y.YさんとY.Aさんと自分で会話をした",
+    feeling: "S.Yさんは読書をしていた",
+  },
+  {
+    type: "left",
+    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Yさん", "S.Yさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["H.Tさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "フリーコーヒーについて説明した",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん", "H.Tさん"],
+    trigger: "2人とも同級生なので、一緒に作品を受け取りに行った",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["H.Sさん", "I.Aさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "色彩検定の本を持っていたので、その話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "関西出身とのことで、京都のおすすめのコーヒー屋さんの話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["H.Sさん", "I.Aさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Mさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "関西出身とのことで、京都のおすすめのコーヒー屋さんの話をした",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Mさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Y.Mさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Gさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ノートにイラストを描いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "フリーコーヒーについて説明した",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Mさん", "Gさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん", "H.Tさん"],
+    trigger: "作品を受け取って戻って来てくれた",
+  },
+  {
+    type: "normarl",
+    event: "2人の関係について話した",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["N.Kさん", "Y.Tさん", "H.Kさん", "N.Eさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "N.Kさんを中心に、アニメの話やテキスタイル学科についての話をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "N.Kさんに明日フリーコーヒーしてねと念押しされた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["N.Kさん"],
+    trigger: "課題をやりに戻った",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "工芸学科についての話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん", "H.Tさん", "Y.Tさん", "H.Kさん", "N.Eさん"],
+    trigger: "",
+    feeling: "",
+  }
+];
+
+## 今回の気付き
+
+- フリーコーヒーに複数回参加してくれた人は、協力者になりうる
+  - 人を呼んでくれたり、フリーコーヒーの空間を一緒に楽しんでくれる
+
+## 今回の面白さ
+
+- 初対面の人同士で会話が生まれた
+  - もともと以前に参加してくれたY.Aさんがいて、趣旨を理解してくれていた
+  - お互いに相席を承諾してくれた
+- Y.AさんとH.Tさんが用事で一度抜けたが、戻ってきてくれた
+- N.Kさんは4度目の参加だった
+  - 課題で忙しかったが、間を縫って来てくれた
+  - 友達を連れて来てくれた
+
+## 基本情報
+
+<PostBasicInfo
+  date="2024-10-22"
+  otherEventDates={eventDates}
+  weather="晴れのち曇り"
+  temp="24"
+  place="東学広場 デザイン棟側"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="元気"
+  comment="複数回来てくれる人がいてやる気"
+  photo=""
+  client:load
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## どのような場が生まれたのか
+
+<EventsInfo overview="" people={peopleWithColor} events={events} />
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[]}
+  client:load
+/>
+
+## 次に何をしようと思ったのか
+
