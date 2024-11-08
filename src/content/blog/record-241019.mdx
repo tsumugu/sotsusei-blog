@@ -22,6 +22,16 @@ import { eventDates } from "../eventDates.js";
 
 export const peopleWithColor = convertPeopleWithColor([
   {
+    name: "Y.Iさん",
+    department: DEPARTMENT_AND_ICONS.env,
+    grade: "1年生"
+  },
+  {
+    name: "Y.Kさん",
+    department: DEPARTMENT_AND_ICONS.env,
+    grade: "1年生"
+  },
+  {
     name: "M.Aさん",
     department: DEPARTMENT_AND_ICONS.interaction,
     grade: "4年生"
@@ -52,6 +62,43 @@ export const events = [
     feeling: "",
   },
   {
+    type: "normarl",
+    event: "人が全然いなかったので、テーブルに何を置くかについてや、ロゴについて考えた",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Iさん", "Y.Kさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "課題の話を聞いた",
+    feeling: "制作の素材をビバホームで買って、その帰りに寄ってくれた",
+  },
+  {
+    type: "normarl",
+    event: "Wi-Fiを集めているらしいので、情デWi-FiのSSIDを教えた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Iさん", "Y.Kさん"],
+    trigger: "",
+  },
+  {
     type: "join",
     stay: [TSUMUGU_PROFILE_JSON.name],
     people: ["M.Aさん"],
@@ -65,6 +112,11 @@ export const events = [
   {
     type: "normarl",
     event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "M.Aさんはかじるチーズケーキを食べていた",
     feeling: "",
   },
   {
@@ -157,3 +209,5 @@ export const events = [
 
 ## 次に何をしようと思ったのか
 
+- テーブルを整える
+- ロゴを作る
