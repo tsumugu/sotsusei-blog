@@ -1,0 +1,290 @@
+---
+title: "初めてのフリーコーヒー"
+description: "2024/5/29にフリーコーヒーを行った記録"
+pubDate: "2024/5/29"
+isWriting: false
+thumb: "record-24529"
+category: ["活動記録"]
+---
+
+import PostBasicInfo from "../../components/Blog/PostBasicInfo/PostBasicInfo.jsx";
+import TsumuguInfo from "../../components/Blog/TsumuguInfo.jsx";
+import VisitorsInfo from "../../components/Blog/VisitorsInfo/VisitorsInfo.jsx";
+import DiffInfo from "../../components/Blog/DiffInfo.jsx";
+import EventsInfo from "../../components/Blog/EventsInfo/EventsInfo.jsx";
+import {
+  DEPARTMENT_AND_ICONS,
+  TSUMUGU_PROFILE_JSON,
+  WEATHERS,
+} from "../../consts.js";
+import { convertPeopleWithColor } from "../../utils/peopleWithIcon.js";
+import { eventDates } from "../eventDates.js";
+
+export const peopleWithColor = convertPeopleWithColor([
+  {
+    name: "Aさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "1年生",
+  },
+  {
+    name: "Bさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "1年生",
+  },
+  {
+    name: "Cさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+    memo: "学年不明"
+  },
+  {
+    name: "Dさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+    memo: "学年不明"
+  },
+  {
+    name: "Eさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+    memo: "学年不明"
+  },
+  {
+    name: "Fさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "4年生"
+  },
+  {
+    name: "Gさん",
+    department: DEPARTMENT_AND_ICONS["graphic-design"],
+    grade: "4年生"
+  },
+  {
+    name: "Hさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+    memo: "学年不明"
+  },
+  {
+    name: "Iさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+    memo: "学年不明"
+  },
+  {
+    name: "Jさん",
+    department: DEPARTMENT_AND_ICONS.product,
+    grade: "1年生",
+    memo: "学年不明"
+  },
+]);
+
+export const events = [
+  {
+    type: "join",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Aさん", "Bさん"],
+    trigger:
+      "広場の椅子で話していた2人組に「コーヒー飲みませんか？」と声を掛ける",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科と名前を聞いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "シートに名前や好きなものを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ドリップコーヒを淹れた",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Aさん", "Bさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Cさん", "Dさん"],
+    trigger:
+      "様子を見て声をかけてくれた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "学科と名前を聞いた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "シートに名前や好きなものを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ドリップコーヒを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "好きなものの話をした",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Aさん", "Bさん", "Cさん", "Dさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Eさん"],
+    trigger:
+      "知り合いを呼んでくれた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: ["Cさん", "Dさん", "Eさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Aさん", "Bさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "シートに名前や好きなものを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ドリップコーヒを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "好きなものの話をした",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Cさん", "Dさん", "Eさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Fさん", "Gさん"],
+    trigger:
+      "",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ドリップコーヒを淹れた",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: ["Cさん", "Dさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Eさん", "Fさん", "Gさん"],
+    trigger: "Fさん、Gさんはコーヒーを渡しただけであまり話せなかった",
+    feeling: "",
+  },
+  {
+    type: "join",
+    stay: ["Cさん", "Dさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Hさん", "Iさん", "Jさん"],
+    trigger:
+      "知り合いを呼んでくれた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "シートに名前や好きなものを書いてもらった",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "ドリップコーヒを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "好きなものの話をした",
+    feeling: "",
+  },
+  {
+    type: "left",
+    stay: [TSUMUGU_PROFILE_JSON.name],
+    people: ["Cさん", "Dさん", "Hさん", "Iさん", "Jさん"],
+    trigger: "",
+    feeling: "",
+  },
+];
+
+## 今回の気付き
+
+- 声掛けすると結構反応してくれる。芝生で寝っ転がってる人or広場で座ってる人に声かけるの有効
+  - 2人組以上のほうがいい。1人の人はだいたいスルーされる
+  - 知り合いがいるとかなり効く。知り合いが知り合いを呼べると強い
+- お湯を沸かす待ち時間と自己紹介シートを書く時間でそこそこ拘束されるのがいい
+  - カルディみたいに渡すだけだと多分一瞬で終わってしまう
+- 最初に目的を紹介したので長めに滞在してくれた
+- 2テーブルでやったのスペースとれて良かった
+- 自己紹介シートで話題を作り出せたことで、話が弾んだ
+- インスタ交換までできた
+    - インスタ交換しましょって声掛けしてくれた人がいたのナイス
+
+## 今回の面白さ
+
+- 初回だったが大勢来てくれた。
+
+## 基本情報
+
+<PostBasicInfo
+  date={"2024-05-29"}
+  otherEventDates={eventDates}
+  weather="晴れ"
+  temp="25.8"
+  place="東学広場 デザイン棟側"
+/>
+
+## 人について
+
+<TsumuguInfo
+  condition="普通"
+  comment="初めてで緊張している"
+  photo=""
+  client:load
+/>
+
+<VisitorsInfo visitors={peopleWithColor} />
+
+## どのような場が生まれたのか
+
+<EventsInfo
+  overview=""
+  people={peopleWithColor}
+  events={events}
+/>
+
+## 前回との変更点
+
+<DiffInfo
+  diffs={[
+  ]}
+  client:load
+/>
+
+## 次に何をしようと思ったのか
+
+- 人数が増えてもなるべく一つの島にしたほうが良い。小さい島を合体させていくのもいい
+- 話題出してとか場を回してくれる人がいたのよかった。ファシリ力…自分がファシリとして振る舞う必要
+- 自己紹介シート書くこと無い
+    - → お題を設定する
+    - → シートを書く目的を設定したい
+    - → 見せ合う時間があるといい
+    - → 2組以上いる状態を維持する
+- 渡した瞬間帰ってしまった
+    - → 人が少ないと寂しい
+    - → 目的を説明しなかった
+    - → 紙コップなので持ち帰れてしまう
+    - → Free CoffeeよりもFree Cafeのほうがいい？
+    - → ガムトークやってみる
+- 砂糖とミルクあまり使われなかった
+    - → ぺン立てと砂糖ポットあったほうがいい
+- ものが散乱する
+    - → コップ、ドリップ、ホルダー、水を整理しておいておけるスタンドがあると強い
+- 店主が誰かわからない
+    - → 名札とエプロンつける
