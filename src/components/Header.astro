@@ -5,11 +5,8 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
+		<img src="/logo.png" alt="tsumugu free coffee logo mark">
 		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">ホーム</HeaderLink>
-			<HeaderLink href="/blog">記録</HeaderLink>
-		</div>
 	</nav>
 </header>
 <style>
@@ -31,7 +28,7 @@ import { SITE_TITLE } from '../consts';
 	nav {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		height: 78px;
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -42,5 +39,8 @@ import { SITE_TITLE } from '../consts';
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
+	}
+	nav img {
+		height: 48px;
 	}
 </style>
