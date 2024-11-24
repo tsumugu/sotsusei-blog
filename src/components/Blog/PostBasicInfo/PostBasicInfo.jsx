@@ -59,7 +59,7 @@ const PostBasicInfo = ({
           <TamabiMap place={place} />
         </div>
       )}
-      {/* {weather && (
+      {weather && (
         <div className="weather cell">
           <div className="weather-inner">
             <div className="emoji-text-wrapper">
@@ -69,7 +69,7 @@ const PostBasicInfo = ({
             <p className="temp">{temp}℃</p>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
