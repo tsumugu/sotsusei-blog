@@ -1,16 +1,12 @@
 .map-wrapper {
   width: 100%;
-  height: 350px;
+  height: 100%;
+  /* height: 350px; */
   overflow: hidden;
 }
 .map-wrapper img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0;
-}
-.map-wrapper iframe {
-  border: none;
-  width: 100%;
-  height: calc(100% + 60px);
-  margin-top: -60px;
 }
