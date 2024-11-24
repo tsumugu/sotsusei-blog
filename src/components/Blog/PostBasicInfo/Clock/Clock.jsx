@@ -40,6 +40,8 @@ const Clock = ({ otherEventDates, eventDate }) => {
   const surroundingEvents = getSurroundingEvents(otherEventDates, eventDate);
   const maxDirMinutes = getMaxDurMinutes(surroundingEvents);
 
+  const beforeDateKey = Object.keys(surroundingEvents)[0];
+
   // 時間の処理
   const startedAt = otherEventDates[eventDate].startedAt;
   const endedAt = otherEventDates[eventDate].endedAt;
@@ -51,6 +53,16 @@ const Clock = ({ otherEventDates, eventDate }) => {
     endMinutes - startMinutes,
   );
 
+  const diffBefore = () => {
+    if (eventDate == beforeDateKey) {
+      return undefined;
+    }
+    if (beforeDateKey) {
+      return surroundingEvents[beforeDateKey].durMinutes;
+    }
+    return undefined;
+  };
+
   return (
     <div className="clock">
       <div className="today-info">
@@ -58,8 +70,11 @@ const Clock = ({ otherEventDates, eventDate }) => {
           {startedAt} - {endedAt}
         </p>
         <p>{totalHoursAndMinutes}</p>
+        <p className="timediff">
+          前回との差 : {diffBefore() ? diffBefore() : "-"}
+        </p>
       </div>
-      <div className="charts">
+      {/* <div className="charts">
         {Object.keys(surroundingEvents).map((key) => {
           const heightPer =
             (surroundingEvents[key].durMinutes / maxDirMinutes) * 100;
@@ -85,7 +100,7 @@ const Clock = ({ otherEventDates, eventDate }) => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
