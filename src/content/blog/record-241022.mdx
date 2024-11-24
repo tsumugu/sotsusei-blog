@@ -1,5 +1,5 @@
 ---
-title: "初対面の人同士で会話が生まれた"
+title: "初対面の人同士でつながりが生まれた"
 description: "2024/10/22にフリーコーヒーを行った記録"
 pubDate: "2024/10/22"
 isWriting: false
@@ -115,7 +115,7 @@ export const events = [
   {
     type: "join",
     stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
-    people: ["Y.Yさん", "S.Yさん"],
+    people: ["S.Yさん", "Y.Yさん"],
     trigger: "",
   },
   {
@@ -139,22 +139,21 @@ export const events = [
     feeling: "",
   },
   {
-    type: "normarl",
-    event: "Y.YさんとY.Aさんと自分で会話をした",
-    feeling: "S.Yさんは読書をしていた",
-  },
-  {
     type: "left",
-    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
-    people: ["Y.Yさん", "S.Yさん"],
+    stay: ["Y.Yさん", "Y.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["S.Yさん"],
     trigger: "",
     feeling: "",
   },
   {
+    type: "normarl",
+    event: "Y.YさんとY.Aさんと自分で会話をした",
+  },
+  {
     type: "join",
-    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
+    stay: ["Y.Yさん", "Y.Aさん", TSUMUGU_PROFILE_JSON.name],
     people: ["H.Tさん"],
-    trigger: "",
+    trigger: "Y.Aさんの友人",
   },
   {
     type: "normarl",
@@ -167,6 +166,13 @@ export const events = [
     feeling: "",
   },
   {
+    type: "left",
+    stay: ["H.Tさん", "Y.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Yさん"],
+    trigger: "",
+    feeling: "",
+  },
+  {
     type: "normarl",
     event: "フリーコーヒーについて説明した",
     feeling: "",
@@ -174,7 +180,7 @@ export const events = [
   {
     type: "left",
     stay: [TSUMUGU_PROFILE_JSON.name],
-    people: ["Y.Aさん", "H.Tさん"],
+    people: ["H.Tさん", "Y.Aさん"],
     trigger: "2人とも同級生なので、一緒に作品を受け取りに行った",
     feeling: "",
   },
@@ -204,46 +210,36 @@ export const events = [
     event: "関西出身とのことで、京都のおすすめのコーヒー屋さんの話をした",
     feeling: "",
   },
+  // {
+  //   type: "left",
+  //   stay: [TSUMUGU_PROFILE_JSON.name],
+  //   people: ["H.Sさん", "I.Aさん"],
+  //   trigger: "",
+  //   feeling: "",
+  // },
+  {
+    type: "join",
+    stay: ["H.Sさん", "I.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Mさん", "Gさん"],
+    trigger: "",
+  },
+  {
+    type: "normarl",
+    event: "コーヒーを淹れた",
+    feeling: "",
+  },
+  {
+    type: "normarl",
+    event: "偏愛マップを使って自己紹介をした",
+    feeling: "",
+  },
   {
     type: "left",
-    stay: [TSUMUGU_PROFILE_JSON.name],
+    stay: ["Y.Mさん", "Gさん", TSUMUGU_PROFILE_JSON.name],
     people: ["H.Sさん", "I.Aさん"],
     trigger: "",
-    feeling: "",
   },
-  {
-    type: "join",
-    stay: [TSUMUGU_PROFILE_JSON.name],
-    people: ["Y.Mさん"],
-    trigger: "",
-  },
-  {
-    type: "normarl",
-    event: "コーヒーを淹れた",
-    feeling: "",
-  },
-  {
-    type: "normarl",
-    event: "偏愛マップを使って自己紹介をした",
-    feeling: "",
-  },
-  {
-    type: "join",
-    stay: ["Y.Mさん", TSUMUGU_PROFILE_JSON.name],
-    people: ["Gさん"],
-    trigger: "",
-  },
-  {
-    type: "normarl",
-    event: "コーヒーを淹れた",
-    feeling: "",
-  },
-  {
-    type: "normarl",
-    event: "偏愛マップを使って自己紹介をした",
-    feeling: "",
-  },
-  {
+    {
     type: "normarl",
     event: "ノートにイラストを描いてもらった",
     feeling: "",
@@ -254,26 +250,31 @@ export const events = [
     feeling: "",
   },
   {
+    type: "join",
+    stay: ["H.Sさん", "I.Aさん", TSUMUGU_PROFILE_JSON.name],
+    people: ["Y.Aさん"],
+    trigger: "作品を受け取って戻って来てくれた",
+  },
+  {
+    type: "normarl",
+    event: "工芸学科について話した",
+    feeling: "",
+  },
+  {
     type: "left",
-    stay: [TSUMUGU_PROFILE_JSON.name],
+    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
     people: ["Y.Mさん", "Gさん"],
     trigger: "",
     feeling: "",
   },
   {
-    type: "join",
-    stay: [TSUMUGU_PROFILE_JSON.name],
-    people: ["Y.Aさん", "H.Tさん"],
-    trigger: "作品を受け取って戻って来てくれた",
-  },
-  {
     type: "normarl",
-    event: "2人の関係について話した",
+    event: "Y.Aさんはごはんを食べていた",
     feeling: "",
   },
   {
     type: "join",
-    stay: ["Y.Aさん", "H.Tさん", TSUMUGU_PROFILE_JSON.name],
+    stay: ["Y.Aさん", TSUMUGU_PROFILE_JSON.name],
     people: ["N.Kさん", "Y.Tさん", "H.Kさん", "N.Eさん"],
     trigger: "",
   },
