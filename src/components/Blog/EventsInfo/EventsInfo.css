@@ -262,6 +262,10 @@
   flex-flow: column;
 }
 
+.person {
+  z-index: 999;
+}
+
 .person-circle,
 .table-circle {
   width: 50px;
