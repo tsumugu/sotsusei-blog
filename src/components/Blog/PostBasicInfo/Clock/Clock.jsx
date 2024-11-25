@@ -14,8 +14,8 @@ const Clock = ({ otherEventDates, eventDate }) => {
     }
 
     // 対象の日の前後2つ（合計5つ）を取得する範囲を計算
-    const start = Math.max(0, targetIndex - 2);
-    const end = Math.min(dates.length, targetIndex + 3); // targetIndexを含むため+3
+    const start = Math.max(0, targetIndex - 1);
+    const end = Math.min(dates.length, targetIndex + 2); // targetIndexを含むため+3
 
     // 範囲内のイベントをオブジェクト形式で返す
     const result = {};
@@ -58,7 +58,9 @@ const Clock = ({ otherEventDates, eventDate }) => {
       return undefined;
     }
     if (beforeDateKey) {
-      return surroundingEvents[beforeDateKey].durMinutes;
+      return (
+        endMinutes - startMinutes - surroundingEvents[beforeDateKey].durMinutes
+      );
     }
     return undefined;
   };
@@ -71,7 +73,11 @@ const Clock = ({ otherEventDates, eventDate }) => {
         </p>
         <p>{totalHoursAndMinutes}</p>
         <p className="timediff">
-          前回との差 : {diffBefore() ? diffBefore() : "-"}
+          前回との差 :{" "}
+          {diffBefore()
+            ? (diffBefore() < 0 ? "-" : "") +
+              convertMinutesToHoursAndMinutes(Math.abs(diffBefore()))
+            : "-"}
         </p>
       </div>
       {/* <div className="charts">

@@ -5,6 +5,6 @@ export const convertMinutesToHoursAndMinutes = (
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
   return isEnglish
-    ? `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`
-    : `${hours}時間${minutes > 0 ? `${minutes}分間` : ""}`;
+    ? `${hours > 0 ? `${hours}h` : ""}${minutes > 0 ? ` ${minutes}m` : ""}`
+    : `${hours > 0 ? `${hours}時間` : ""}${minutes > 0 ? `${minutes}分間` : ""}`;
 };
