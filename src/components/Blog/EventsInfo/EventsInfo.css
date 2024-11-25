@@ -277,8 +277,9 @@
 }
 
 .table-circle {
-  background: url("https://d3djg0dm3dsv8.cloudfront.net/c0d6b16423f661a91e8e950cde35ff26e78a00adb0ff7c0eaa489fe991714a24.svg");
+  /* background: url("https://d3djg0dm3dsv8.cloudfront.net/c0d6b16423f661a91e8e950cde35ff26e78a00adb0ff7c0eaa489fe991714a24.svg"); */
   /* filter generated at https://codepen.io/sosuke/pen/Pjoqqp */
+  background-color: #fff;
   filter: invert(0%) sepia(3%) saturate(32%) hue-rotate(67deg) brightness(84%)
     contrast(98%);
   border-radius: 0;
