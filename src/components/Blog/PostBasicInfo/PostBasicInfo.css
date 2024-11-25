@@ -68,7 +68,7 @@
 }
 
 .weather-inner {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -94,17 +94,23 @@
 }
 
 .emoji-text-wrapper > p {
-  margin-top: 16px;
+  /* margin-top: 16px; */
+  margin: 0;
+  padding: 0;
   font-size: 1.2rem;
 }
 
 .weather .temp {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   font-size: 1.5rem;
   font-weight: bold;
-  height: 100%;
+  /* height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+}
+
+.temp {
+  margin-top: 1rem !important;
 }
