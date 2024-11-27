@@ -10,7 +10,18 @@ const EventsInfo = ({ events, people }) => {
   const newPeople = addTsumuguToPeople(people);
 
   const numberToWords = (num) => {
-    const numberWords = ["zero", "one", "two", "three", "four", "five", "six"];
+    const numberWords = [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+    ];
     return numberWords[num] || "";
   };
 
@@ -18,8 +29,8 @@ const EventsInfo = ({ events, people }) => {
     const count = arr.filter((e) => e != TSUMUGU_PROFILE_JSON.name).length;
     if (count <= 0) {
       return "";
-    } else if (count >= 7) {
-      return "seven-people";
+    } else if (count >= 9) {
+      return "nine-people";
     } else {
       return `${numberToWords(count)}-people`;
     }

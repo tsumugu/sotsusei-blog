@@ -129,6 +129,24 @@
     "person-3 table-circle person-4"
     "person-5 person-tsumugu person-6";
 }
+.person-container.eight-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    "person-3 table-circle person-4"
+    "person-5 person-tsumugu person-6"
+    "person-7 - -";
+}
+.person-container.nine-people {
+  grid-template-areas:
+    "person-0 person-1 person-2"
+    "person-3 table-circle person-4"
+    "person-5 person-tsumugu person-6"
+    "person-7 person-8 -";
+}
+
+.event-container:has(.eight-people, .nine-people) {
+  aspect-ratio: auto;
+}
 
 .event-bubble {
   max-width: 80%;

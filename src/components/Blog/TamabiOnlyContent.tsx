@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { CookiesProvider, useCookies } from "react-cookie";
+import { isExhibition } from "../../consts";
 
 type TamabiOnlyContentProps = {
   contentPlaceholder: ReactNode;
@@ -14,7 +15,7 @@ const TamabiOnlyContent: React.FC<TamabiOnlyContentProps> = ({
   return (
     <CookiesProvider defaultSetOptions={{ path: "/" }}>
       <div className="tamabiOnlyContent">
-        {userInfo.isTamabiUser ? (
+        {userInfo.isTamabiUser || isExhibition ? (
           <>{limitedContent}</>
         ) : (
           <>{contentPlaceholder}</>
