@@ -8,18 +8,22 @@ import PostComment from '../components/Blog/PostComment.tsx';
 import Share from '../components/Blog/Share.tsx';
 import FormattedDate from '../components/FormattedDate.jsx';
 import NextPost from '../components/Blog/NextPost.astro';
+import { isExhibition } from "../consts";
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, isWriting, thumb } = Astro.props;
 
-const heroImage = new URL(`/og/${thumb}.png`, Astro.url.origin).toString();
+//const heroImage = new URL(`/og/${thumb}.png`, Astro.url.origin).toString();
+const heroImage = `/og/${thumb}.png`;
 
 const shareData = {
   title: title,
   text: description,
   url: Astro.url.toString()
 };
+
+const localIsExhibition = isExhibition;
 ---
 
 <html lang="en">
@@ -121,7 +125,9 @@ const shareData = {
 								</div>
 								<div>
 									<hr />
-									<p>
+									<p style={{
+        							display: localIsExhibition ? "none" : "block",
+      							}}>
 										コメント
 									</p>
 									<PostComment slug={thumb} client:load />

@@ -1,6 +1,7 @@
 //22d3s0w1nb.execute-api.ap-northeast-1.amazonaws.com/default/saveCommentsToNotion
 import React, { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
+import { isExhibition } from "../../consts";
 
 interface CommentInfo {
   slug: string;
@@ -49,7 +50,11 @@ const PostComment = (props: CommentInfo) => {
   }, []);
 
   return (
-    <>
+    <div
+      style={{
+        display: isExhibition ? "none" : "block",
+      }}
+    >
       <div
         className="commentArea"
         style={{
@@ -247,7 +252,7 @@ const PostComment = (props: CommentInfo) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

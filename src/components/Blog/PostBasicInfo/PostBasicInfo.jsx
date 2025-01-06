@@ -63,7 +63,8 @@ const PostBasicInfo = ({
         <div className="weather cell">
           <div className="weather-inner">
             <div className="emoji-text-wrapper">
-              <Twemoji className="emoji" text={WEATHERS[weather]} />
+              {/* <Twemoji className="emoji" text={WEATHERS[weather]} /> */}
+              <p className="emoji">{WEATHERS[weather]}</p>
               <p class="text">{weather}</p>
             </div>
             <p className="temp">{temp}℃</p>

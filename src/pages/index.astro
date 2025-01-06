@@ -107,7 +107,7 @@ const posts = (await getCollection('blog')).sort(
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={new URL(`/og/${post.slug}.png`, Astro.url.origin).toString()} alt="" />
+									<img width={720} height={360} src={`/og/${post.slug}.png`} alt="" />
 									<ul class="categories">
 									{post.data.category?.map(cat=><li class="category">{cat}</li>)}
 									</ul>
